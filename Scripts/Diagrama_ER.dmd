@@ -1,0 +1,8 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<OSDM_Design class="oracle.dbtools.crest.model.design.Design" name="Diagrama_ER" id="F7AB2C53-50EF-857B-0F39-F212999A5845" version="3.5">
+<createdBy>inti</createdBy>
+<createdTime>2020-04-17 00:28:27 UTC</createdTime>
+<ownerDesignName>Diagrama_ER</ownerDesignName>
+<capitalNames>false</capitalNames>
+<designId>F7AB2C53-50EF-857B-0F39-F212999A5845</designId>
+</OSDM_Design>
