@@ -1,0 +1,56 @@
+<app-header-principal></app-header-principal>
+<main>
+    <div class="container">
+    
+    <!-- Heading Row -->
+    <div class="row align-items-center my-5">
+        <div class="col-lg-7">
+          <img class="img-fluid rounded mb-4 mb-lg-0" src={{this.pathLogo}} alt="">
+        </div>
+        <!-- /.col-lg-8 -->
+        <div class="col-lg-5">
+          <h1 class="font-weight-light">{{this.eslogan}} </h1>
+        </div>
+        <!-- /.col-md-4 -->
+      </div>
+      <!-- 16:9 aspect ratio -->
+    <div class="embed-responsive embed-responsive-16by9">
+        <video controls>
+            <source src="{{this.pathVideo}}" type="video/mp4">
+              
+          </video>
+    </div>
+      <div class="row">
+        <div class="col-md-4 mb-5">
+          <div class="card h-100">
+            <div class="card-body">
+              <h2 class="card-title">Mision</h2>
+              <p class="card-text">{{this.mision}}</p>
+            </div>
+          </div>
+        </div>
+        <!-- /.col-md-4 -->
+        <div class="col-md-4 mb-5">
+          <div class="card h-100">
+            <div class="card-body">
+              <h2 class="card-title">Vision</h2>
+              <p class="card-text">{{this.vision}}</p>
+            </div>
+          </div>
+        </div>
+        <!-- /.col-md-4 -->
+        <div class="col-md-4 mb-5">
+          <div class="card h-100">
+            <div class="card-body">
+              <h2 class="card-title">Acerca De</h2>
+              <p class="card-text">{{this.acercaDe}}</p>
+            </div>
+          </div>
+        </div>
+        <!-- /.col-md-4 -->
+  
+      </div>
+    </div>
+</main>
+
+<app-footer></app-footer>

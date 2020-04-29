@@ -1,0 +1,11 @@
+/*para el tamanio del logo*/
+#header img{
+    width: 50px;
+}
+
+
+
+/*para el texto del menu*/
+.text-header{
+    color: -moz-linear-gradient(left, rgba(98,125,77,1) 0%, rgba(31,59,8,1) 100%) !important;
+}
