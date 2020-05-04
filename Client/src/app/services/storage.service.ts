@@ -7,39 +7,38 @@ import {Usuario} from "../models/usuario";
 })
 export class StorageService {
   private sessionStorageService;
-  private currentSession:Sesion=null;
+  private currentSession:Usuario=null;
   constructor(private router:Router) {
     this.sessionStorageService=sessionStorage;
     this.currentSession = this.loadSessionData();
   }
-  setCurrentSession(sesion:Sesion){
+  setCurrentSession(sesion:Usuario){
     this.currentSession=sesion;
     this.sessionStorageService.setItem('currentUser',JSON.stringify(sesion));
   }
   removeCurrentSession():void{
     this.sessionStorageService.removeItem('currentUser');
   }
-  loadSessionData():Sesion{
+  loadSessionData():Usuario{
     var sessionStr=this.sessionStorageService.getItem('currentUser');
-    return (sessionStr)?<Sesion>JSON.parse(sessionStr):null;
+    return (sessionStr)?<Usuario>JSON.parse(sessionStr):null;
   }
-  getCurrentSession():Sesion{
+  getCurrentSession():Usuario{
     return this.currentSession;
   }
   getCurrentUser(): Usuario {
-    var session: Sesion = this.getCurrentSession();
-    return (session && session.usuario) ? session.usuario : null;
+    var session: Usuario = this.getCurrentSession();
+    return (session) ? session : null;
   };
   isAuthenticated(): boolean {
-    return (this.getCurrentToken() != null) ? true : false;
+    return (this.getCurrentToken() != null||this.getCurrentToken() != '0') ? true : false;
   };
   getCurrentToken(): string {
     var session = this.getCurrentSession();
-    return (session && session.token) ? session.token : null;
+    return (session) ? session.rol.toString() : null;
   };
   logout(): void{
     this.removeCurrentSession();
     this.router.navigate(['/login']);
   }
-
 }

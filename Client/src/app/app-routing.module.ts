@@ -3,6 +3,16 @@ import { Routes, RouterModule } from '@angular/router';
 import { HomeComponent } from './components/home/home.component'
 import { LoginComponent } from './components/login/login.component';
 import { RegisterComponent } from './components/register/register.component';
+import { HomeUserComponent } from './components/user/home-user/home-user.component';
+import { HomeAdminComponent } from './components/admin/home-admin/home-admin.component';
+import { CrudAdminComponent } from './components/admin/crud-admin/crud-admin.component';
+import { CargaMasivaComponent } from './components/admin/carga-masiva/carga-masiva.component';
+import { CrearproductoComponent } from './components/admin/crearproducto/crearproducto.component';
+import { CrearcategoriaComponent } from './components/admin/crearcategoria/crearcategoria.component';
+import { ReportesComponent } from './components/admin/reportes/reportes.component';
+import { AccountRecoveryComponent } from './components/account-recovery/account-recovery.component';
+import { ProfileComponent } from './components/user/profile/profile.component';
+import { AccessdeniedComponent } from './components/accessdenied/accessdenied.component';
 
 const routes: Routes = [
   {
@@ -21,6 +31,42 @@ const routes: Routes = [
   {
     path: 'register',
     component:RegisterComponent
+  },
+  {
+    path: 'home-user/:id',
+    component:HomeUserComponent
+  },
+  {
+    path: 'home-admin/:id',
+    component:HomeAdminComponent
+  },
+  {
+    path:'cargaMasiva',
+    component:CargaMasivaComponent
+  },
+  {
+    path:'crearProducto/:id',
+    component:CrearproductoComponent
+  },
+  {
+    path:'crearCategoria',
+    component:CrearcategoriaComponent
+  },
+  {
+    path:'reportes',
+    component:ReportesComponent
+  },
+  {
+    path:'account-recovery',
+    component:AccountRecoveryComponent
+  },
+  {
+    path:'profile/:id',
+    component:ProfileComponent
+  },
+  {
+    path:'accessdenied',
+    component:AccessdeniedComponent
   }
 ];
 
