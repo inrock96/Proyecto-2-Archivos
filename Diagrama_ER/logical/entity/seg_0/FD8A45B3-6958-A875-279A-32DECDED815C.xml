@@ -1,0 +1,85 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="FD8A45B3-6958-A875-279A-32DECDED815C" name="Categoria">
+<createdBy>inti</createdBy>
+<createdTime>2020-04-17 00:47:54 UTC</createdTime>
+<ownerDesignName>Diagrama_ER</ownerDesignName>
+<engineerTo>
+<item key="16A8E2EC-8E46-F219-924F-8264BB52D067" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="id_categoria" id="0D15BD6B-966D-F1CC-5860-E5EDE927AB04">
+<createdBy>inti</createdBy>
+<createdTime>2020-04-17 02:03:51 UTC</createdTime>
+<ownerDesignName>Diagrama_ER</ownerDesignName>
+<engineerTo>
+<item key="16A8E2EC-8E46-F219-924F-8264BB52D067" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="nombre" id="DA53A8B3-55E1-BD00-BDDB-FA1602FDBEEB">
+<createdBy>inti</createdBy>
+<createdTime>2020-04-17 02:04:04 UTC</createdTime>
+<ownerDesignName>Diagrama_ER</ownerDesignName>
+<engineerTo>
+<item key="16A8E2EC-8E46-F219-924F-8264BB52D067" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>32</dataTypeSize>
+<ownDataTypeParameters>32,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="descripcion" id="6B304ACD-41D1-4589-B38C-EFD21A84745F">
+<createdBy>inti</createdBy>
+<createdTime>2020-04-17 02:04:19 UTC</createdTime>
+<ownerDesignName>Diagrama_ER</ownerDesignName>
+<engineerTo>
+<item key="16A8E2EC-8E46-F219-924F-8264BB52D067" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="id_categoria_padre" id="EFB1BA34-2F64-F0B9-EDAE-2516F5AF38E6">
+<createdBy>inti</createdBy>
+<createdTime>2020-04-17 02:05:01 UTC</createdTime>
+<generatorID>91E2B6EB-B51D-5AE9-D54D-59865194B8A7</generatorID>
+<ownerDesignName>Diagrama_ER</ownerDesignName>
+<engineerTo>
+<item key="16A8E2EC-8E46-F219-924F-8264BB52D067" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<referedAttribute>0D15BD6B-966D-F1CC-5860-E5EDE927AB04</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="0C46A2CA-D3EE-08EA-BA99-2B6277E78939" name="Categoria PK">
+<createdBy>inti</createdBy>
+<createdTime>2020-04-17 02:04:01 UTC</createdTime>
+<ownerDesignName>Diagrama_ER</ownerDesignName>
+<engineerTo>
+<item key="16A8E2EC-8E46-F219-924F-8264BB52D067" value="true"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>0D15BD6B-966D-F1CC-5860-E5EDE927AB04</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

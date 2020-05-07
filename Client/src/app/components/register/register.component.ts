@@ -20,7 +20,7 @@ export class RegisterComponent implements OnInit {
   patina:any=[];
   fileData:File = null;
   ngOnInit() {
-
+    
   }
 
   processFile(fileInput:any){
@@ -37,8 +37,9 @@ export class RegisterComponent implements OnInit {
       usuario.direccion = direccion;
       usuario.pathFoto = 'Alie_'+this.fileData.name.replace(/\s+/g, '');
       usuario.fecha = fecha;
-      if(genero=='Masculino')
+      if(genero=='Masculino'){
         usuario.genero=1;
+      }
       else if(genero=='Femenino')
         usuario.genero=2;
       else
@@ -46,7 +47,7 @@ export class RegisterComponent implements OnInit {
       usuario.rol=3;
       usuario.credito=this.randomCredit();
       //console.log(usuario);
-      var bandera=false;
+      let bandera;
       this.userService.getOneUser(usuario.correo).subscribe(
         res=>{
           this.patina=res;
@@ -65,7 +66,7 @@ export class RegisterComponent implements OnInit {
           }
         }
       )
-      if(bandera=true){
+      if(Array.isArray(this.patina)&&this.patina.length&&this.patina.length>0){
         this.router.navigate(['home'])
       }else{
         this.userService.addUser(usuario);

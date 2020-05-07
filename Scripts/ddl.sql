@@ -3,7 +3,7 @@ CREATE TABLE bitacora (
     usuario       VARCHAR2(50),
     operacio      VARCHAR2(50),
     fecha         TIMESTAMP,
-    CONSTRAINT pk_id_bitacora PRIMARY KEY ( id_bitacora );
+    CONSTRAINT pk_id_bitacora PRIMARY KEY ( id_bitacora )
 );
 
 CREATE TABLE pagina_inicio (
@@ -26,8 +26,8 @@ CREATE TABLE genero (
 
 CREATE TABLE color (
     id_color   INTEGER NOT NULL,
-    nombre     VARCHAR2(25) NOT NULL
-    CONSTRAINT pk_id_color PRIMARY KEY ( id_color );
+    nombre     VARCHAR2(25) NOT NULL,
+    CONSTRAINT pk_id_color PRIMARY KEY ( id_color )
 );
 
 CREATE TABLE rol (
@@ -46,7 +46,7 @@ CREATE TABLE usuario (
     telefono           INTEGER NOT NULL,
     fotografia         VARCHAR2(150),
     fecha_nac          DATE NOT NULL,
-    fecha_creacion     DATE NOT NULL,
+    fecha_creacion     TIMESTAMP NOT NULL,
     direccion          VARCHAR2(150) NOT NULL,
     credito            INTEGER NOT NULL,
     ganancia           INTEGER NOT NULL,
@@ -68,7 +68,7 @@ CREATE TABLE categoria (
     nombre                   VARCHAR2(32) NOT NULL,
     descripcion              VARCHAR(150),
     id_categoria_padre       INTEGER NOT NULL,
-    CONSTRAINT pk_id_categoria PRIMARY KEY ( id_categoria ),
+    CONSTRAINT pk_id_categoria PRIMARY KEY ( id_categoria )
 );
 
 ALTER TABLE categoria
@@ -81,12 +81,12 @@ CREATE TABLE producto (
     imagen                   VARCHAR2(150) NOT NULL,
     descripcion              VARCHAR2(150),
     precio                   INTEGER NOT NULL,
-    fecha_carga              DATE NOT NULL,
+    fecha_carga              TIMESTAMP NOT NULL,
     cantidad_disponible      INTEGER NOT NULL,
     id_categoria             INTEGER NOT NULL,
     CONSTRAINT pk_id_producto PRIMARY KEY ( id_producto ),
     CONSTRAINT fk_producto_categoria FOREIGN KEY ( id_categoria )
-    REFERENCES categoria ( id_categoria );
+    REFERENCES categoria ( id_categoria )
 );
 CREATE TABLE colorxproducto (
     id_color         INTEGER NOT NULL,
@@ -147,20 +147,19 @@ CREATE TABLE conversacion (
     id_usuariocliente     INTEGER NOT NULL,
     puntuacion            INTEGER,
     CONSTRAINT conversacion_pk PRIMARY KEY ( id_usuario,id_usuariocliente ),
-    CONSTRAINT fk_conversacion_usuario FOREIGN KEY ( id_usuario )
+    CONSTRAINT fk_conver_usuario FOREIGN KEY ( id_usuario )
     REFERENCES usuario ( id_usuario ),
-    CONSTRAINT fk_conversacion_usuario_cliente FOREIGN KEY ( id_usuariocliente )
+    CONSTRAINT fk_conver_usuario_cliente FOREIGN KEY ( id_usuariocliente )
     REFERENCES usuario ( id_usuario )
 );
 
 CREATE TABLE detalle_mensaje ( 
     id_usuario    INTEGER NOT NULL, 
-    id_usuario_cliente   INTEGER NOT NULL,
+    id_usuariocliente   INTEGER NOT NULL,
     id_mensaje           INTEGER NOT NULL,
-    CONSTRAINT pk_detalle_mensaje PRIMARY KEY ( id_usuario,id_usuario_cliente,id_mensaje ),
-    CONSTRAINT fk_detalle_mensaje FOREIGN KEY ( conversacion_usuario_id_usuario, conversacion_usuario_id_usuario1 )
-    REFERENCES conversacion ( id_usuario,id_usuario_cliente ),
-    CONSTRAINT detalle_mensaje_mensaje_fk FOREIGN KEY ( id_mensaje )
-    REFERENCES mensaje ( id_mensaje );
-
+    CONSTRAINT pk_detalle_mensaje PRIMARY KEY ( id_usuario,id_usuariocliente,id_mensaje ),
+    CONSTRAINT fk_detalle_conver FOREIGN KEY ( id_usuario, id_usuariocliente )
+    REFERENCES conversacion ( id_usuario,id_usuariocliente ),
+    CONSTRAINT fk_detalle_mensaje FOREIGN KEY ( id_mensaje )
+    REFERENCES mensaje ( id_mensaje )
 );

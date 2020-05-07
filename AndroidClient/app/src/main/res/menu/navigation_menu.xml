@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+<item
+    android:id="@+id/menu_inicio"
+    android:title="Inicio"
+    android:icon="@drawable/ic_sentiment_satisfied_black_24dp"></item>
+    <item
+        android:id="@+id/menu_login"
+        android:title="Login"
+        android:icon="@drawable/ic_person_black_24dp">
+
+    </item>
+    <item
+        android:id="@+id/menu_registro"
+        android:title="Registrar"
+        android:icon="@drawable/ic_person_add_black_24dp"></item>
+
+</menu>

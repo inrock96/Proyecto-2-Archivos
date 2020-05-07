@@ -26,17 +26,10 @@ export class StorageService {
   getCurrentSession():Usuario{
     return this.currentSession;
   }
-  getCurrentUser(): Usuario {
-    var session: Usuario = this.getCurrentSession();
-    return (session) ? session : null;
-  };
   isAuthenticated(): boolean {
-    return (this.getCurrentToken() != null||this.getCurrentToken() != '0') ? true : false;
+    return (this.getCurrentSession() != null) ? true : false;
   };
-  getCurrentToken(): string {
-    var session = this.getCurrentSession();
-    return (session) ? session.rol.toString() : null;
-  };
+
   logout(): void{
     this.removeCurrentSession();
     this.router.navigate(['/login']);

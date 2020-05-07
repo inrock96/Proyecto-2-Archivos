@@ -1,0 +1,96 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="7C0F92BD-FD1E-47B5-7DB0-66FAE15D7E04" name="Detalle_Mensaje">
+<createdBy>inti</createdBy>
+<createdTime>2020-04-17 02:55:14 UTC</createdTime>
+<generatorID>9B8E0DE5-9392-3591-A494-3D81C88C6F2C</generatorID>
+<ownerDesignName>Diagrama_ER</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="Conversacion_Usuario_id_usuario" id="2E8076D3-BCAF-8BA1-8BC9-284C2453F8E3">
+<createdBy>inti</createdBy>
+<createdTime>2020-04-17 02:55:14 UTC</createdTime>
+<generatorID>97219799-FF24-010A-DFCA-322D1BD0EDA8</generatorID>
+<ownerDesignName>Diagrama_ER</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="9D45E4D6-2CAF-9050-B652-5C93A081FBA8" referredColumn="911D189F-A1AA-DCB1-935A-2401C2128289"/>
+</associations>
+</Column>
+<Column name="Conversacion_Usuario_id_usuario1" id="CBC11597-C83F-6746-DA51-8D1F126522F2">
+<createdBy>inti</createdBy>
+<createdTime>2020-04-17 02:55:14 UTC</createdTime>
+<generatorID>83C7D368-650E-A15C-0800-CC86186B60EC</generatorID>
+<ownerDesignName>Diagrama_ER</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="9D45E4D6-2CAF-9050-B652-5C93A081FBA8" referredColumn="13B415BD-1D49-9C41-C73A-6DFFA077C036"/>
+</associations>
+</Column>
+<Column name="Mensaje_id_mensaje" id="29283AD2-703B-CA56-F4CA-3D2A5FEEB073">
+<createdBy>inti</createdBy>
+<createdTime>2020-04-17 02:55:14 UTC</createdTime>
+<generatorID>7829E3F3-95B7-A205-59B3-CC26E0E300C1</generatorID>
+<ownerDesignName>Diagrama_ER</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="2F6CE179-FD22-F4FF-2B48-B4955CB40869" referredColumn="00396CED-921A-003A-A2DF-D5B62DDD6237"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="89A79C60-BBDF-2A5E-D923-2F31F9DD35F6" name="Detalle_Mensaje_PK">
+<createdBy>inti</createdBy>
+<createdTime>2020-04-17 02:55:14 UTC</createdTime>
+<generatorID>12085A5A-8362-7A4C-57B0-78FBF339B8BF</generatorID>
+<ownerDesignName>Diagrama_ER</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="2E8076D3-BCAF-8BA1-8BC9-284C2453F8E3"/>
+<colUsage columnID="CBC11597-C83F-6746-DA51-8D1F126522F2"/>
+<colUsage columnID="29283AD2-703B-CA56-F4CA-3D2A5FEEB073"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="47EB76B3-4C9C-D3B3-2A58-1C50DAEE38CC" name="Detalle_Mensaje_Conversacion_FK">
+<createdBy>inti</createdBy>
+<createdTime>2020-04-17 02:55:14 UTC</createdTime>
+<generatorID>DC378048-8E16-E802-BCE1-94F072EF3F9F</generatorID>
+<ownerDesignName>Diagrama_ER</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="2E8076D3-BCAF-8BA1-8BC9-284C2453F8E3"/>
+<colUsage columnID="CBC11597-C83F-6746-DA51-8D1F126522F2"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="B6D6C74D-05C5-7410-826B-A1974C7906BA" name="Detalle_Mensaje_Mensaje_FK">
+<createdBy>inti</createdBy>
+<createdTime>2020-04-17 02:55:14 UTC</createdTime>
+<generatorID>D8E44EB1-9581-28A5-4708-B5B35798F829</generatorID>
+<ownerDesignName>Diagrama_ER</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="29283AD2-703B-CA56-F4CA-3D2A5FEEB073"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

@@ -1,0 +1,123 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="D9313EFB-E682-FFBB-790B-6B1EFBB2FF35" name="Comentario">
+<createdBy>inti</createdBy>
+<createdTime>2020-04-17 00:48:24 UTC</createdTime>
+<ownerDesignName>Diagrama_ER</ownerDesignName>
+<engineerTo>
+<item key="16A8E2EC-8E46-F219-924F-8264BB52D067" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="id_comentario" id="58349016-6DBF-F1A9-FE1C-13256BEA0FE9">
+<createdBy>inti</createdBy>
+<createdTime>2020-04-17 02:24:06 UTC</createdTime>
+<ownerDesignName>Diagrama_ER</ownerDesignName>
+<engineerTo>
+<item key="16A8E2EC-8E46-F219-924F-8264BB52D067" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="contenido" id="B22DB814-CD87-653B-5BB5-E9F3941FD86D">
+<createdBy>inti</createdBy>
+<createdTime>2020-04-17 02:23:35 UTC</createdTime>
+<ownerDesignName>Diagrama_ER</ownerDesignName>
+<engineerTo>
+<item key="16A8E2EC-8E46-F219-924F-8264BB52D067" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>255</dataTypeSize>
+<ownDataTypeParameters>255,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="fecha" id="050E1E76-E35F-F38E-9C15-E3E2C346157B">
+<createdBy>inti</createdBy>
+<createdTime>2020-04-17 02:23:46 UTC</createdTime>
+<ownerDesignName>Diagrama_ER</ownerDesignName>
+<engineerTo>
+<item key="16A8E2EC-8E46-F219-924F-8264BB52D067" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="id_usuario" id="46FF34CA-6E06-2DC4-20CE-10FFF07D0A9B">
+<createdBy>inti</createdBy>
+<createdTime>2020-04-17 02:24:23 UTC</createdTime>
+<generatorID>CCD84DCD-465F-690B-DAE6-8E4B5957E128</generatorID>
+<ownerDesignName>Diagrama_ER</ownerDesignName>
+<engineerTo>
+<item key="16A8E2EC-8E46-F219-924F-8264BB52D067" value="true"/>
+</engineerTo>
+<referedAttribute>523657A4-F651-A6BC-D5B6-FBA1B2B448BC</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="titulo" id="FCD2D96A-FB16-4403-DAC5-E916F10B4D4E">
+<createdBy>inti</createdBy>
+<createdTime>2020-04-17 02:25:13 UTC</createdTime>
+<ownerDesignName>Diagrama_ER</ownerDesignName>
+<engineerTo>
+<item key="16A8E2EC-8E46-F219-924F-8264BB52D067" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>25</dataTypeSize>
+<ownDataTypeParameters>25,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="puntuacion" id="7CFA4060-FE56-AAAA-6E49-2E79B17431CB">
+<createdBy>inti</createdBy>
+<createdTime>2020-04-17 02:25:23 UTC</createdTime>
+<ownerDesignName>Diagrama_ER</ownerDesignName>
+<engineerTo>
+<item key="16A8E2EC-8E46-F219-924F-8264BB52D067" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="id_producto" id="6E5926B4-544F-2517-61A5-F3E8650A3590">
+<createdBy>inti</createdBy>
+<createdTime>2020-04-17 02:27:21 UTC</createdTime>
+<generatorID>AC408B53-806E-8614-1DF8-F4CEE4F064E7</generatorID>
+<ownerDesignName>Diagrama_ER</ownerDesignName>
+<engineerTo>
+<item key="16A8E2EC-8E46-F219-924F-8264BB52D067" value="true"/>
+</engineerTo>
+<referedAttribute>851CF546-92C7-3A0D-6E0E-78683913513D</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="7AD1A9AA-4C32-2600-0DCA-9B148807B724" name="Comentario PK">
+<createdBy>inti</createdBy>
+<createdTime>2020-04-17 02:24:17 UTC</createdTime>
+<ownerDesignName>Diagrama_ER</ownerDesignName>
+<engineerTo>
+<item key="16A8E2EC-8E46-F219-924F-8264BB52D067" value="true"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>58349016-6DBF-F1A9-FE1C-13256BEA0FE9</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

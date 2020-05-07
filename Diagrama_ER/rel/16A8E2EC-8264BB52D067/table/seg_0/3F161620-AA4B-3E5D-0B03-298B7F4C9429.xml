@@ -1,0 +1,135 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="3F161620-AA4B-3E5D-0B03-298B7F4C9429" name="Comentario">
+<createdBy>inti</createdBy>
+<createdTime>2020-04-17 02:55:14 UTC</createdTime>
+<generatorID>D9313EFB-E682-FFBB-790B-6B1EFBB2FF35</generatorID>
+<ownerDesignName>Diagrama_ER</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="id_comentario" id="3996273F-59F0-A79B-F392-840B6C5CB3C2">
+<createdBy>inti</createdBy>
+<createdTime>2020-04-17 02:55:14 UTC</createdTime>
+<generatorID>58349016-6DBF-F1A9-FE1C-13256BEA0FE9</generatorID>
+<ownerDesignName>Diagrama_ER</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="contenido" id="3A2F9470-75AA-92EA-0261-66807F57F60A">
+<createdBy>inti</createdBy>
+<createdTime>2020-04-17 02:55:14 UTC</createdTime>
+<generatorID>B22DB814-CD87-653B-5BB5-E9F3941FD86D</generatorID>
+<ownerDesignName>Diagrama_ER</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>255</dataTypeSize>
+<ownDataTypeParameters>255,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="fecha" id="8CD2C9E6-4D93-A886-A0B0-2219250B38D7">
+<createdBy>inti</createdBy>
+<createdTime>2020-04-17 02:55:14 UTC</createdTime>
+<generatorID>050E1E76-E35F-F38E-9C15-E3E2C346157B</generatorID>
+<ownerDesignName>Diagrama_ER</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Usuario_id_usuario" id="5EC98CE4-B272-F00C-1603-E062F0C31145">
+<createdBy>inti</createdBy>
+<createdTime>2020-04-17 02:55:14 UTC</createdTime>
+<generatorID>46FF34CA-6E06-2DC4-20CE-10FFF07D0A9B</generatorID>
+<ownerDesignName>Diagrama_ER</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="FD24B31E-65B4-74E5-8B62-1F57D266801C" referredColumn="049DBDC9-CC08-6068-07F0-48E76FFA800D"/>
+</associations>
+</Column>
+<Column name="titulo" id="B783EE1F-8DDA-165B-A9F4-5F4A3DC4C7E5">
+<createdBy>inti</createdBy>
+<createdTime>2020-04-17 02:55:14 UTC</createdTime>
+<generatorID>FCD2D96A-FB16-4403-DAC5-E916F10B4D4E</generatorID>
+<ownerDesignName>Diagrama_ER</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>25</dataTypeSize>
+<ownDataTypeParameters>25,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="puntuacion" id="B86F74FF-93DC-60A2-C2AD-5A3743B29EF4">
+<createdBy>inti</createdBy>
+<createdTime>2020-04-17 02:55:14 UTC</createdTime>
+<generatorID>7CFA4060-FE56-AAAA-6E49-2E79B17431CB</generatorID>
+<ownerDesignName>Diagrama_ER</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Producto_id_producto" id="51B50D37-2537-441A-76EC-D5656348935A">
+<createdBy>inti</createdBy>
+<createdTime>2020-04-17 02:55:14 UTC</createdTime>
+<generatorID>6E5926B4-544F-2517-61A5-F3E8650A3590</generatorID>
+<ownerDesignName>Diagrama_ER</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="3C3BA307-B2E5-CDF3-8CD3-936D08F76512" referredColumn="87F4805C-4720-E4D6-8B3B-FCB331788570"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="AB499C3F-6A3B-586D-8F18-0F2999135287" name="Comentario_PK">
+<createdBy>inti</createdBy>
+<createdTime>2020-04-17 02:55:14 UTC</createdTime>
+<generatorID>7AD1A9AA-4C32-2600-0DCA-9B148807B724</generatorID>
+<ownerDesignName>Diagrama_ER</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="3996273F-59F0-A79B-F392-840B6C5CB3C2"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="2AA31BCC-7F55-E020-E547-0CF27F10ABA7" name="Comentario_Producto_FK">
+<createdBy>inti</createdBy>
+<createdTime>2020-04-17 02:55:14 UTC</createdTime>
+<generatorID>AC408B53-806E-8614-1DF8-F4CEE4F064E7</generatorID>
+<ownerDesignName>Diagrama_ER</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="51B50D37-2537-441A-76EC-D5656348935A"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="7E5067E3-279E-5F58-9343-8DE8EE8F5BE9" name="Comentario_Usuario_FK">
+<createdBy>inti</createdBy>
+<createdTime>2020-04-17 02:55:14 UTC</createdTime>
+<generatorID>CCD84DCD-465F-690B-DAE6-8E4B5957E128</generatorID>
+<ownerDesignName>Diagrama_ER</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="5EC98CE4-B272-F00C-1603-E062F0C31145"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

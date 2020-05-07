@@ -1,0 +1,62 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="322C45EE-36D2-9196-7247-130E964E1F74" name="ColorXProducto">
+<createdBy>inti</createdBy>
+<createdTime>2020-04-17 02:20:17 UTC</createdTime>
+<ownerDesignName>Diagrama_ER</ownerDesignName>
+<engineerTo>
+<item key="16A8E2EC-8E46-F219-924F-8264BB52D067" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="id_color" id="123B7624-CE37-FCA3-CDA8-B5046CC2B289">
+<createdBy>inti</createdBy>
+<createdTime>2020-04-17 02:20:39 UTC</createdTime>
+<generatorID>E14BC4C2-1BB4-022B-1B22-32C411C962AB</generatorID>
+<ownerDesignName>Diagrama_ER</ownerDesignName>
+<engineerTo>
+<item key="16A8E2EC-8E46-F219-924F-8264BB52D067" value="true"/>
+</engineerTo>
+<referedAttribute>8443EC82-FA4D-ACFA-D6CD-A88BADF6355F</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="id_producto" id="6FE7FC1C-7BD3-9CBB-09B5-E42751FF6C96">
+<createdBy>inti</createdBy>
+<createdTime>2020-04-17 02:20:45 UTC</createdTime>
+<generatorID>5E1602FE-C718-6487-F5DB-39969EA0B4B5</generatorID>
+<ownerDesignName>Diagrama_ER</ownerDesignName>
+<engineerTo>
+<item key="16A8E2EC-8E46-F219-924F-8264BB52D067" value="true"/>
+</engineerTo>
+<referedAttribute>851CF546-92C7-3A0D-6E0E-78683913513D</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="1969F080-18B3-281A-D864-B730A7B4C4E0" name="ColorXProducto PK">
+<createdBy>inti</createdBy>
+<createdTime>2020-04-17 02:20:39 UTC</createdTime>
+<ownerDesignName>Diagrama_ER</ownerDesignName>
+<engineerTo>
+<item key="16A8E2EC-8E46-F219-924F-8264BB52D067" value="true"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>123B7624-CE37-FCA3-CDA8-B5046CC2B289</attributeRef>
+<attributeRef>6FE7FC1C-7BD3-9CBB-09B5-E42751FF6C96</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

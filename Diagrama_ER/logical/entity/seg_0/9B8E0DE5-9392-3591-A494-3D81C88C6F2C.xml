@@ -1,0 +1,76 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="9B8E0DE5-9392-3591-A494-3D81C88C6F2C" name="Detalle_Mensaje">
+<createdBy>inti</createdBy>
+<createdTime>2020-04-17 02:42:44 UTC</createdTime>
+<ownerDesignName>Diagrama_ER</ownerDesignName>
+<engineerTo>
+<item key="16A8E2EC-8E46-F219-924F-8264BB52D067" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="id_usuario_ayuda" id="97219799-FF24-010A-DFCA-322D1BD0EDA8">
+<createdBy>inti</createdBy>
+<createdTime>2020-04-17 02:42:54 UTC</createdTime>
+<generatorID>DC378048-8E16-E802-BCE1-94F072EF3F9F</generatorID>
+<ownerDesignName>Diagrama_ER</ownerDesignName>
+<engineerTo>
+<item key="16A8E2EC-8E46-F219-924F-8264BB52D067" value="true"/>
+</engineerTo>
+<referedAttribute>9CEF8994-46BC-0436-AF4E-E88297E5C103</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="id_usuario_cliente" id="83C7D368-650E-A15C-0800-CC86186B60EC">
+<createdBy>inti</createdBy>
+<createdTime>2020-04-17 02:42:54 UTC</createdTime>
+<generatorID>DC378048-8E16-E802-BCE1-94F072EF3F9F</generatorID>
+<ownerDesignName>Diagrama_ER</ownerDesignName>
+<engineerTo>
+<item key="16A8E2EC-8E46-F219-924F-8264BB52D067" value="true"/>
+</engineerTo>
+<referedAttribute>18778789-16F7-CAEB-D43B-5604B940442A</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="id_mensaje" id="7829E3F3-95B7-A205-59B3-CC26E0E300C1">
+<createdBy>inti</createdBy>
+<createdTime>2020-04-17 02:43:55 UTC</createdTime>
+<generatorID>D8E44EB1-9581-28A5-4708-B5B35798F829</generatorID>
+<ownerDesignName>Diagrama_ER</ownerDesignName>
+<engineerTo>
+<item key="16A8E2EC-8E46-F219-924F-8264BB52D067" value="true"/>
+</engineerTo>
+<referedAttribute>39DED329-39EB-30B4-298C-50DDC46A5C16</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="12085A5A-8362-7A4C-57B0-78FBF339B8BF" name="Detalle_Mensaje PK">
+<createdBy>inti</createdBy>
+<createdTime>2020-04-17 02:42:54 UTC</createdTime>
+<ownerDesignName>Diagrama_ER</ownerDesignName>
+<engineerTo>
+<item key="16A8E2EC-8E46-F219-924F-8264BB52D067" value="true"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>97219799-FF24-010A-DFCA-322D1BD0EDA8</attributeRef>
+<attributeRef>83C7D368-650E-A15C-0800-CC86186B60EC</attributeRef>
+<attributeRef>7829E3F3-95B7-A205-59B3-CC26E0E300C1</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

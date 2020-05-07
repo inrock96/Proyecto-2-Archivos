@@ -25,6 +25,8 @@ import { CrearproductoComponent } from './components/admin/crearproducto/crearpr
 import { CrearcategoriaComponent } from './components/admin/crearcategoria/crearcategoria.component';
 import { CrearusuarioComponent } from './components/admin/crearusuario/crearusuario.component';
 import { ModificarusuarioComponent } from './components/admin/modificarusuario/modificarusuario.component';
+import { UserasideComponent } from './components/useraside/useraside.component';
+import { ProductoComponent } from './components/user/producto/producto.component';
 
 @NgModule({
   declarations: [
@@ -48,7 +50,9 @@ import { ModificarusuarioComponent } from './components/admin/modificarusuario/m
     CrearproductoComponent,
     CrearcategoriaComponent,
     CrearusuarioComponent,
-    ModificarusuarioComponent
+    ModificarusuarioComponent,
+    UserasideComponent,
+    ProductoComponent
   ],
   imports: [
     BrowserModule,

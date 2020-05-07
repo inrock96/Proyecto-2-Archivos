@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import {HttpClient} from '@angular/common/http'
 import {MainPage} from '../models/mainPage'
+import { Login } from '../models/login';
 @Injectable({
   providedIn: 'root'
 })
@@ -20,5 +21,12 @@ export class MainpageService {
       (res)=>console.log(res),
       (err)=>console.error(err)
     )
+  }
+  sendMail(correo1:String,contrasena1:String){
+    var login = new Login();
+    login.correo=correo1;
+    login.contrasena=contrasena1;
+    console.log(login);
+    return this.http.post(`${this.API_URI}/api/sendMail`,login).subscribe();
   }
 }

@@ -17,6 +17,7 @@ class Server {
         this.routes();
     }
     config() {
+        //process.env.UV_THREADPOOL_SIZE=10;
         this.app.set('port', process.env.PORT || this.PORT);
         this.app.use(morgan_1.default('dev'));
         this.app.use(cors_1.default());
@@ -29,7 +30,7 @@ class Server {
         this.app.use('/api', allRoutes_1.default);
     }
     start() {
-        this.app.listen(this.app.get('port'), () => {
+        this.app.listen(3000, '0.0.0.0', () => {
             console.log('Server on port ', this.app.get('port'));
         });
     }

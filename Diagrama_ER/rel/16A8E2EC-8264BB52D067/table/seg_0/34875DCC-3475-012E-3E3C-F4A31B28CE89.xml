@@ -1,0 +1,121 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="34875DCC-3475-012E-3E3C-F4A31B28CE89" name="Producto">
+<createdBy>inti</createdBy>
+<createdTime>2020-04-17 02:55:14 UTC</createdTime>
+<generatorID>5761CF7A-8BF4-9836-4A5C-66038EC6CBD1</generatorID>
+<ownerDesignName>Diagrama_ER</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="id_producto" id="87F4805C-4720-E4D6-8B3B-FCB331788570">
+<createdBy>inti</createdBy>
+<createdTime>2020-04-17 02:55:14 UTC</createdTime>
+<generatorID>851CF546-92C7-3A0D-6E0E-78683913513D</generatorID>
+<ownerDesignName>Diagrama_ER</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="imagen" id="ADDCCE90-74AD-CE84-E55B-27E7C42C7FC9">
+<createdBy>inti</createdBy>
+<createdTime>2020-04-17 02:55:14 UTC</createdTime>
+<generatorID>B7C89A2D-4C17-C115-31A4-4CFB3D656719</generatorID>
+<ownerDesignName>Diagrama_ER</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>150</dataTypeSize>
+<ownDataTypeParameters>150,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="descripcion" id="C8BEB7C1-3BC0-5F2C-3E58-6A24EF5C8E84">
+<createdBy>inti</createdBy>
+<createdTime>2020-04-17 02:55:14 UTC</createdTime>
+<generatorID>4BF9A57C-33AA-6C61-8DC2-3F7A765B5506</generatorID>
+<ownerDesignName>Diagrama_ER</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>150</dataTypeSize>
+<ownDataTypeParameters>150,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="precio" id="D02628D6-CEEC-8CB0-B4C9-B54D1B6A9FF1">
+<createdBy>inti</createdBy>
+<createdTime>2020-04-17 02:55:14 UTC</createdTime>
+<generatorID>E99DD76C-C824-5076-D413-C0E0D51832D3</generatorID>
+<ownerDesignName>Diagrama_ER</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="fecha_carga" id="F2031954-A96C-477E-E090-792F17855258">
+<createdBy>inti</createdBy>
+<createdTime>2020-04-17 02:55:14 UTC</createdTime>
+<generatorID>6CA9B853-58E7-1EAE-DDB7-0FBE0BA0A41B</generatorID>
+<ownerDesignName>Diagrama_ER</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="cantidad_disponible" id="F12ABD3A-7465-69FF-9108-6E46B53684A5">
+<createdBy>inti</createdBy>
+<createdTime>2020-04-17 02:55:14 UTC</createdTime>
+<generatorID>80CAF2A8-EBBD-9F0B-1E06-AEBA59158583</generatorID>
+<ownerDesignName>Diagrama_ER</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Categoria_id_categoria" id="16E550E7-2466-193A-CEB0-5ABDF6AE1C50">
+<createdBy>inti</createdBy>
+<createdTime>2020-04-17 02:55:14 UTC</createdTime>
+<generatorID>A89748D0-258B-3C32-6F2C-4F0DECA37145</generatorID>
+<ownerDesignName>Diagrama_ER</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="6B92DBAA-5E33-B87B-735B-869D78A97704" referredColumn="9FF37423-DBC1-73D9-27A1-B2E0A8D7C262"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="6EA9C6F4-912F-3209-CB82-EBD289E88D2D" name="Producto_PK">
+<createdBy>inti</createdBy>
+<createdTime>2020-04-17 02:55:14 UTC</createdTime>
+<generatorID>EC3C3D57-5F71-68C4-E7C7-663F509579C3</generatorID>
+<ownerDesignName>Diagrama_ER</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="87F4805C-4720-E4D6-8B3B-FCB331788570"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="91839B9C-D4DE-52C7-DE03-9231D339DC98" name="Producto_Categoria_FK">
+<createdBy>inti</createdBy>
+<createdTime>2020-04-17 02:55:14 UTC</createdTime>
+<generatorID>0FF94836-4DA3-261F-39E9-91E12D5CFE97</generatorID>
+<ownerDesignName>Diagrama_ER</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="16E550E7-2466-193A-CEB0-5ABDF6AE1C50"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

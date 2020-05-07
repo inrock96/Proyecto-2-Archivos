@@ -1,0 +1,75 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="A653A4BC-0EED-9CD8-32FD-85A089F01DAA" name="Conversacion">
+<createdBy>inti</createdBy>
+<createdTime>2020-04-17 00:48:26 UTC</createdTime>
+<ownerDesignName>Diagrama_ER</ownerDesignName>
+<engineerTo>
+<item key="16A8E2EC-8E46-F219-924F-8264BB52D067" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="id_usuario_ayuda" id="9CEF8994-46BC-0436-AF4E-E88297E5C103">
+<createdBy>inti</createdBy>
+<createdTime>2020-04-17 02:34:04 UTC</createdTime>
+<generatorID>F3193BA7-E137-97D1-6BD0-27CA83797660</generatorID>
+<ownerDesignName>Diagrama_ER</ownerDesignName>
+<engineerTo>
+<item key="16A8E2EC-8E46-F219-924F-8264BB52D067" value="true"/>
+</engineerTo>
+<referedAttribute>523657A4-F651-A6BC-D5B6-FBA1B2B448BC</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="id_usuario_cliente" id="18778789-16F7-CAEB-D43B-5604B940442A">
+<createdBy>inti</createdBy>
+<createdTime>2020-04-17 02:34:13 UTC</createdTime>
+<generatorID>3A1BB5AC-1CBE-2A02-7462-5275E44A04FE</generatorID>
+<ownerDesignName>Diagrama_ER</ownerDesignName>
+<engineerTo>
+<item key="16A8E2EC-8E46-F219-924F-8264BB52D067" value="true"/>
+</engineerTo>
+<referedAttribute>523657A4-F651-A6BC-D5B6-FBA1B2B448BC</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="puntuacion" id="987B6BB4-F8A8-BC87-B63B-75BEE22155A4">
+<createdBy>inti</createdBy>
+<createdTime>2020-04-17 02:34:35 UTC</createdTime>
+<ownerDesignName>Diagrama_ER</ownerDesignName>
+<engineerTo>
+<item key="16A8E2EC-8E46-F219-924F-8264BB52D067" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="BBC48C24-692D-4626-6B63-05B066C09475" name="Conversacion PK">
+<createdBy>inti</createdBy>
+<createdTime>2020-04-17 02:34:04 UTC</createdTime>
+<ownerDesignName>Diagrama_ER</ownerDesignName>
+<engineerTo>
+<item key="16A8E2EC-8E46-F219-924F-8264BB52D067" value="true"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>9CEF8994-46BC-0436-AF4E-E88297E5C103</attributeRef>
+<attributeRef>18778789-16F7-CAEB-D43B-5604B940442A</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

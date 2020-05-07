@@ -1,0 +1,68 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="9C8D4A09-728D-EF20-5ACD-7831F4AE2BBB" name="Carro_Compras">
+<createdBy>inti</createdBy>
+<createdTime>2020-04-17 00:48:02 UTC</createdTime>
+<ownerDesignName>Diagrama_ER</ownerDesignName>
+<engineerTo>
+<item key="16A8E2EC-8E46-F219-924F-8264BB52D067" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="id_carrito" id="C73E7748-17C2-CD18-FFA8-0A2DB27B7773">
+<createdBy>inti</createdBy>
+<createdTime>2020-04-17 02:41:18 UTC</createdTime>
+<ownerDesignName>Diagrama_ER</ownerDesignName>
+<engineerTo>
+<item key="16A8E2EC-8E46-F219-924F-8264BB52D067" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="id_usuario" id="A0F451C8-3827-358D-38F2-CCBDE979028C">
+<createdBy>inti</createdBy>
+<createdTime>2020-04-17 02:39:47 UTC</createdTime>
+<generatorID>1FDF41D3-BB7E-FA51-DE31-E2DD55B09CB4</generatorID>
+<ownerDesignName>Diagrama_ER</ownerDesignName>
+<engineerTo>
+<item key="16A8E2EC-8E46-F219-924F-8264BB52D067" value="true"/>
+</engineerTo>
+<referedAttribute>523657A4-F651-A6BC-D5B6-FBA1B2B448BC</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="total" id="B118866C-CEBE-FB42-8B29-4CBAFC1F8C4C">
+<createdBy>inti</createdBy>
+<createdTime>2020-04-17 02:40:08 UTC</createdTime>
+<ownerDesignName>Diagrama_ER</ownerDesignName>
+<engineerTo>
+<item key="16A8E2EC-8E46-F219-924F-8264BB52D067" value="true"/>
+</engineerTo>
+<use>0</use>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="DA0C5635-FFBB-D29D-5A6A-AA0015705EBF" name="Carro_Compras PK">
+<createdBy>inti</createdBy>
+<createdTime>2020-04-17 02:41:26 UTC</createdTime>
+<ownerDesignName>Diagrama_ER</ownerDesignName>
+<engineerTo>
+<item key="16A8E2EC-8E46-F219-924F-8264BB52D067" value="true"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>C73E7748-17C2-CD18-FFA8-0A2DB27B7773</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

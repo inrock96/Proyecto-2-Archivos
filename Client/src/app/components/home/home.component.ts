@@ -17,7 +17,7 @@ export class HomeComponent implements OnInit {
   vision: string;
   acercaDe: string;
   constructor(public mainpageservice:MainpageService) { 
-  
+    
   }
 
   ngOnInit() {
@@ -33,7 +33,7 @@ export class HomeComponent implements OnInit {
         this.nombre=this.pagina[0]['NOMBRE'];
         this.eslogan=this.pagina[0]['ESLOGAN'];
         this.pathLogo='http://localhost:3000/uploads/'+this.pagina[0]['IMAGEN'];
-        this.pathVideo='http://localhost:3000/uploads/'+this.pagina[0]['VIDEO'];;
+        this.pathVideo='http://localhost:3000/uploads/'+encodeURIComponent(this.pagina[0]['VIDEO'].trim());
         console.log(this.pathVideo);
         this.vision=this.pagina[0]['VISION'];
         this.mision=this.pagina[0]['MISION'];

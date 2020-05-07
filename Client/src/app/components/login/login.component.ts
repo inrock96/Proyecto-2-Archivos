@@ -18,21 +18,24 @@ export class LoginComponent implements OnInit {
               private userService:UserService,
               private storageService:StorageService) { }
   ngOnInit() {
-    if(this.storageService.isAuthenticated){
-      this.router.navigate(['accessDenied']);
+    if(this.storageService.isAuthenticated()){
+      this.router.navigate(['accessdenied']);
     }
   }
 
-  login(correo:String,contrasena:string){
-    this.log.correo=correo;
-    this.log.contrasena = contrasena;
-    if(this.userService.autenticarUsuario(this.log)){
-      this.usuario = this.userService.getUser(this.log.correo);
-      this.storageService.setCurrentSession(this.usuario)
-      if(this.usuario.rol=1){
-        this.router.navigate(['home-admin']);
-      }else{
+  login(correo:string,contrasena:string){
+    const login = new Login();
+    login.correo = correo;
+    login.contrasena = contrasena;
+    console.log(login);
+    if(this.userService.autenticarUsuario(login)){
+      console.log('cocos feo');
+      this.usuario = this.userService.getUser(login.correo);
+      this.storageService.setCurrentSession(this.usuario);
+      if(this.usuario.rol==1){
         this.router.navigate(['home-user']);
+      }else{
+        this.router.navigate(['home-admin']);
       }
     }else{
       this.router.navigate(['home']);

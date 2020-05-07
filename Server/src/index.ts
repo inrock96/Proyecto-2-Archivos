@@ -5,16 +5,17 @@ import cors from 'cors';
 import mainPageRoutes from './routes/mainPageRoutes'
 //import userRoutes from './routes/userRoutes'
 import allRoutes from './routes/allRoutes'
+
 class Server{
     private PORT = 3000;
     public app:Application;
-
     constructor(){
         this.app = express();
         this.config();
         this.routes();
     }
     config():void{
+        //process.env.UV_THREADPOOL_SIZE=10;
         this.app.set('port',process.env.PORT||this.PORT);
         this.app.use(morgan('dev'));
         this.app.use(cors());
@@ -27,7 +28,7 @@ class Server{
         this.app.use('/api',allRoutes);
     }
     start():void{
-        this.app.listen(this.app.get('port'),()=>{
+        this.app.listen(3000,'0.0.0.0',()=>{
             console.log('Server on port ',this.app.get('port'))
         });
     }

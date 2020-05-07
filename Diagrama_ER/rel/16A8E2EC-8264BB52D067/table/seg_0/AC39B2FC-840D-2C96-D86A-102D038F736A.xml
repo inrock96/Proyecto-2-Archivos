@@ -1,0 +1,91 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="AC39B2FC-840D-2C96-D86A-102D038F736A" name="Conversacion">
+<createdBy>inti</createdBy>
+<createdTime>2020-04-17 02:55:14 UTC</createdTime>
+<generatorID>A653A4BC-0EED-9CD8-32FD-85A089F01DAA</generatorID>
+<ownerDesignName>Diagrama_ER</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="Usuario_id_usuario" id="911D189F-A1AA-DCB1-935A-2401C2128289">
+<createdBy>inti</createdBy>
+<createdTime>2020-04-17 02:55:14 UTC</createdTime>
+<generatorID>9CEF8994-46BC-0436-AF4E-E88297E5C103</generatorID>
+<ownerDesignName>Diagrama_ER</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="F03B0B5A-E101-4EDA-F91B-F26555A53D83" referredColumn="049DBDC9-CC08-6068-07F0-48E76FFA800D"/>
+</associations>
+</Column>
+<Column name="Usuario_id_usuario1" id="13B415BD-1D49-9C41-C73A-6DFFA077C036">
+<createdBy>inti</createdBy>
+<createdTime>2020-04-17 02:55:14 UTC</createdTime>
+<generatorID>18778789-16F7-CAEB-D43B-5604B940442A</generatorID>
+<ownerDesignName>Diagrama_ER</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="177B6F82-FE3A-AB59-3625-8A5465AC99CA" referredColumn="049DBDC9-CC08-6068-07F0-48E76FFA800D"/>
+</associations>
+</Column>
+<Column name="puntuacion" id="B44F1EBD-5A68-5C5A-4930-54C773F8FBC6">
+<createdBy>inti</createdBy>
+<createdTime>2020-04-17 02:55:14 UTC</createdTime>
+<generatorID>987B6BB4-F8A8-BC87-B63B-75BEE22155A4</generatorID>
+<ownerDesignName>Diagrama_ER</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="4C17EAAF-9F1A-19D3-6E3A-76FA3B89F3B4" name="Conversacion_PK">
+<createdBy>inti</createdBy>
+<createdTime>2020-04-17 02:55:14 UTC</createdTime>
+<generatorID>BBC48C24-692D-4626-6B63-05B066C09475</generatorID>
+<ownerDesignName>Diagrama_ER</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="911D189F-A1AA-DCB1-935A-2401C2128289"/>
+<colUsage columnID="13B415BD-1D49-9C41-C73A-6DFFA077C036"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="5249DBCE-EB9E-B30F-2FA7-F7E09A973939" name="Conversacion_Usuario_FK">
+<createdBy>inti</createdBy>
+<createdTime>2020-04-17 02:55:14 UTC</createdTime>
+<generatorID>F3193BA7-E137-97D1-6BD0-27CA83797660</generatorID>
+<ownerDesignName>Diagrama_ER</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="911D189F-A1AA-DCB1-935A-2401C2128289"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="8F8C2482-0538-FAD2-178A-699E44F8C3E2" name="Conversacion_Usuario_FKv2">
+<createdBy>inti</createdBy>
+<createdTime>2020-04-17 02:55:14 UTC</createdTime>
+<generatorID>3A1BB5AC-1CBE-2A02-7462-5275E44A04FE</generatorID>
+<ownerDesignName>Diagrama_ER</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="13B415BD-1D49-9C41-C73A-6DFFA077C036"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

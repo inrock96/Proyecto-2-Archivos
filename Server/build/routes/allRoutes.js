@@ -24,9 +24,17 @@ class AllRoutes {
         //Usuarios
         this.router.post('/getUser', allController_1.default.getUser);
         this.router.post('/addUser', allController_1.default.addUser);
+        this.router.post('/deleteUser/:id', allController_1.default.deleteUser);
         this.router.post('/verifyUser', allController_1.default.verifyUser);
         this.router.post('/uploadFile', upload.single('file'), allController_1.default.uploadFile);
-        //
+        this.router.post('/updateContrasena', allController_1.default.updateUserPassword);
+        //productos
+        this.router.post('/addProduct', allController_1.default.addProduct);
+        this.router.post('/buscarProductos', allController_1.default.buscarProductos);
+        //categorias
+        this.router.post('/addCategoria', allController_1.default.addCategoria);
+        //Correo
+        this.router.post('/sendMail', allController_1.default.sendMail);
     }
 }
 exports.default = new AllRoutes().router;

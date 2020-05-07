@@ -33,11 +33,11 @@ const routes: Routes = [
     component:RegisterComponent
   },
   {
-    path: 'home-user/:id',
+    path: 'home-user',
     component:HomeUserComponent
   },
   {
-    path: 'home-admin/:id',
+    path: 'home-admin',
     component:HomeAdminComponent
   },
   {
@@ -45,7 +45,7 @@ const routes: Routes = [
     component:CargaMasivaComponent
   },
   {
-    path:'crearProducto/:id',
+    path:'crearProducto',
     component:CrearproductoComponent
   },
   {
@@ -67,6 +67,10 @@ const routes: Routes = [
   {
     path:'accessdenied',
     component:AccessdeniedComponent
+  },
+  {
+    path:'crud-user',
+    component:CrudAdminComponent
   }
 ];
 

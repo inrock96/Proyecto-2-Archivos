@@ -1,1 +1,31 @@
-<p>home-user works!</p>
+<app-header-user></app-header-user>
+<section id="speakers" class= "mt-4">
+    <div class="container">
+
+        <div class="row">
+            <div class ="col-md-6 mb-4 col-md-6 col-lg-5">
+                <input  type="text" class="form-control" placeholder="Búsqueda producto">
+                <button>Buscar</button>
+                <app-producto *ngif></app-producto>
+            </div>
+            
+            <div class="col-md-6 mb-4 col-md-6 col-lg-5">
+                <div class="card">
+                    <img src={{this.pathFoto}} class="card-img-top" alt="Foto">
+                        <div class="card-body">
+                            <h5 class="card-title">INFORMACION PERSONAL</h5>
+                        </div>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">Nombre: {{this.nombre}}</li>
+                            <li class="list-group-item">Apellido: {{this.apellidos}}</li>
+                            <li class="list-group-item">Correo:{{this.correo}}</li>
+                            <li class="list-group-item">Telefono:{{this.telefono}}</li>
+                            <a class="btn btn-primary btn-block">EDITAR INFORMACION</a>
+                          </ul>
+                </div>
+                
+        </div>
+        </div>
+        
+    </div>
+</section>

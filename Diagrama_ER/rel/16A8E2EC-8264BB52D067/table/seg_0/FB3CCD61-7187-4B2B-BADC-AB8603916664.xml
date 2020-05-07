@@ -1,0 +1,90 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="FB3CCD61-7187-4B2B-BADC-AB8603916664" name="Detalle_Carro_Compras">
+<createdBy>inti</createdBy>
+<createdTime>2020-04-17 02:55:14 UTC</createdTime>
+<generatorID>B76764D3-9487-1C06-E3D4-3613DDEF52C2</generatorID>
+<ownerDesignName>Diagrama_ER</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="Producto_id_producto" id="BC272E5A-0D5D-425D-9B05-5CC3E854ED0B">
+<createdBy>inti</createdBy>
+<createdTime>2020-04-17 02:55:14 UTC</createdTime>
+<generatorID>40503AAF-C227-2806-97A6-4C71C5B19391</generatorID>
+<ownerDesignName>Diagrama_ER</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="8E13E949-1607-E8F3-23F3-4740625DCAD8" referredColumn="87F4805C-4720-E4D6-8B3B-FCB331788570"/>
+</associations>
+</Column>
+<Column name="cantidad_producto" id="E3FEEEBB-4E31-C962-FCE5-B7F8DB896D2D">
+<createdBy>inti</createdBy>
+<createdTime>2020-04-17 02:55:14 UTC</createdTime>
+<generatorID>2C43E7FE-5D86-370E-BFD4-45094CE89FAB</generatorID>
+<ownerDesignName>Diagrama_ER</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Carro_Compras_id_carrito" id="3D3CFF01-708B-6BD7-82F6-8D0BE48052AE">
+<createdBy>inti</createdBy>
+<createdTime>2020-04-17 02:55:14 UTC</createdTime>
+<generatorID>BFF30EC2-D049-00E6-26AB-B9F16F0C59B6</generatorID>
+<ownerDesignName>Diagrama_ER</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="EE8A1EFD-4F33-67E1-E302-0CC9D106453F" referredColumn="E14C9130-6061-21CE-5E21-758818E48F7A"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="8F8B45AA-31F4-80D4-079B-65B20C8D2451" name="Detalle_Carro_Compras_PK">
+<createdBy>inti</createdBy>
+<createdTime>2020-04-17 02:55:14 UTC</createdTime>
+<generatorID>3728AFD7-C2C8-BDD7-5341-EA26E75605A8</generatorID>
+<ownerDesignName>Diagrama_ER</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="BC272E5A-0D5D-425D-9B05-5CC3E854ED0B"/>
+<colUsage columnID="3D3CFF01-708B-6BD7-82F6-8D0BE48052AE"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="AFE67ED9-D062-BD99-CA10-8A432E626062" name="Detalle_Carro_Compras_Carro_Compras_FK">
+<createdBy>inti</createdBy>
+<createdTime>2020-04-17 02:55:14 UTC</createdTime>
+<generatorID>E23E2388-DF7E-DFD4-CD9A-41C84389A9A5</generatorID>
+<ownerDesignName>Diagrama_ER</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="3D3CFF01-708B-6BD7-82F6-8D0BE48052AE"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="9FB4FC59-B395-FC07-C58C-2F4A5F7C467A" name="Detalle_Carro_Compras_Producto_FK">
+<createdBy>inti</createdBy>
+<createdTime>2020-04-17 02:55:14 UTC</createdTime>
+<generatorID>15684871-1700-4654-1D94-C2F21162D5BA</generatorID>
+<ownerDesignName>Diagrama_ER</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="BC272E5A-0D5D-425D-9B05-5CC3E854ED0B"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

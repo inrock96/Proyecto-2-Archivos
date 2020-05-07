@@ -1,0 +1,74 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="40DEC6D0-9ED0-29CE-531A-EC4E1C31C08F" name="Carro_Compras">
+<createdBy>inti</createdBy>
+<createdTime>2020-04-17 02:55:14 UTC</createdTime>
+<generatorID>9C8D4A09-728D-EF20-5ACD-7831F4AE2BBB</generatorID>
+<ownerDesignName>Diagrama_ER</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="id_carrito" id="E14C9130-6061-21CE-5E21-758818E48F7A">
+<createdBy>inti</createdBy>
+<createdTime>2020-04-17 02:55:14 UTC</createdTime>
+<generatorID>C73E7748-17C2-CD18-FFA8-0A2DB27B7773</generatorID>
+<ownerDesignName>Diagrama_ER</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Usuario_id_usuario" id="E00017FF-5BDF-F780-204D-C556CF8F9174">
+<createdBy>inti</createdBy>
+<createdTime>2020-04-17 02:55:14 UTC</createdTime>
+<generatorID>A0F451C8-3827-358D-38F2-CCBDE979028C</generatorID>
+<ownerDesignName>Diagrama_ER</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="59F56212-AA86-0A9E-EBC1-FFDF42257D1D" referredColumn="049DBDC9-CC08-6068-07F0-48E76FFA800D"/>
+</associations>
+</Column>
+<Column name="total" id="13F8205D-46D0-1B09-5871-83FA58C9AC13">
+<createdBy>inti</createdBy>
+<createdTime>2020-04-17 02:55:14 UTC</createdTime>
+<generatorID>B118866C-CEBE-FB42-8B29-4CBAFC1F8C4C</generatorID>
+<ownerDesignName>Diagrama_ER</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="218D16AF-E9D4-BF6B-BDDA-35AF9716D5AB" name="Carro_Compras_PK">
+<createdBy>inti</createdBy>
+<createdTime>2020-04-17 02:55:14 UTC</createdTime>
+<generatorID>DA0C5635-FFBB-D29D-5A6A-AA0015705EBF</generatorID>
+<ownerDesignName>Diagrama_ER</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="E14C9130-6061-21CE-5E21-758818E48F7A"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="4DCACE5D-0C9A-EF30-7B33-EED88BA91F4B" name="Carro_Compras_Usuario_FK">
+<createdBy>inti</createdBy>
+<createdTime>2020-04-17 02:55:14 UTC</createdTime>
+<generatorID>1FDF41D3-BB7E-FA51-DE31-E2DD55B09CB4</generatorID>
+<ownerDesignName>Diagrama_ER</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="E00017FF-5BDF-F780-204D-C556CF8F9174"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>
