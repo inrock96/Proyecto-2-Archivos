@@ -24,7 +24,8 @@ export class StorageService {
     return (sessionStr)?<Usuario>JSON.parse(sessionStr):null;
   }
   getCurrentSession():Usuario{
-    return this.currentSession;
+    var sessionStr = this.sessionStorageService.getItem('currentUser');
+    return (sessionStr)?<Usuario>JSON.parse(sessionStr):null;
   }
   isAuthenticated(): boolean {
     return (this.getCurrentSession() != null) ? true : false;

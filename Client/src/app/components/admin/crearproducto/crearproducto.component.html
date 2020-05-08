@@ -1,2 +1,58 @@
 <app-header-admin></app-header-admin>
+<div class="container">
+    <div class="row">
+        <div class="col text-center">
+            <h1>Crear Producto</h1>
+            <small>Ingresa datos para añadir un producto</small>
+        </div>
+    </div>
+    <div class="col col-md-10 offset-md-1 col-lg-8 offset-lg-2 pt-2">
+        <form>
+            <div class="form-row">
+                <div class="form-group col">
+                    <input  type="text" class="form-control" placeholder="Nombre" #txtNombre>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col">
+                    <input  type="text" class="form-control" placeholder="Descripcion" #txtDescripcion>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col">
+                    <input  type="number" min="0" step="1" onkeypress="return event.charCode >= 48" class="form-control" placeholder="Precio" #txtPrecio>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col">
+                    <input  type="number" min="0" step="1" onkeypress="return event.charCode >= 48" class="form-control" placeholder="Cantidad" #txtCantidad>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col">
+                    <label for="example-fecha-input" class="col-2 col-form-label">Fotografía</label>
+                    <input class="form control" id="example-fecha-input" #imageInput type="file"  accept="image/*" (change)="processFile($event)" data-file="param.file"> 
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="example-date-input" class="col-2 col-form-label">Categoría</label>
+                <select  id="inputState" class="form-control" #txtPadre>    
+                    <option  type="text" *ngFor="let categoria of this.categorias | keyvalue" >{{categoria.value['NOMBRE']}}</option>
+                  </select>
+              </div>
+            <div class="form-row pb-1">
+                <div class="col">
+                  <button type="button" class="btn btn-lg btn-dark  btn-block" (click)="addProducto(textNombre.value,textApellidos.value,textCorreo.value,textContrasena.value,textTelefono.value,textDir.value,textDate.value,textGenero.value)" >Enviar</button>
+                </div>
+              </div>
+              <div class="form-row pb-5">
+                   
+            </div>
+            <div class="form-row pb-5"> 
+            </div>
+            <div class="form-row pb-5">
+            </div>
+        </form>
+    </div>
+</div>
 <footer></footer>

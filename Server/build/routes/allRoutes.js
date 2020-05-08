@@ -33,6 +33,8 @@ class AllRoutes {
         this.router.post('/buscarProductos', allController_1.default.buscarProductos);
         //categorias
         this.router.post('/addCategoria', allController_1.default.addCategoria);
+        this.router.get('/getCategorias', allController_1.default.getCategorias);
+        this.router.post('getCategoria', allController_1.default.getCategoria);
         //Correo
         this.router.post('/sendMail', allController_1.default.sendMail);
     }

@@ -9,7 +9,7 @@ import { StorageService } from 'src/app/services/storage.service';
 export class AccessdeniedComponent implements OnInit {
 
   constructor(sgoarage:StorageService) { 
-    var s = sgoarage.isAuthenticated();
+    var s = sessionStorage.getItem('current');
     console.log('s es igual a '+s)
   }
 

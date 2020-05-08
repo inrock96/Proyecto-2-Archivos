@@ -29,6 +29,8 @@ class AllRoutes{
         this.router.post('/buscarProductos',allController.buscarProductos);
         //categorias
         this.router.post('/addCategoria',allController.addCategoria);
+        this.router.get('/getCategorias',allController.getCategorias);
+        this.router.post('getCategoria',allController.getCategoria);
         //Correo
         this.router.post('/sendMail',allController.sendMail); 
     }

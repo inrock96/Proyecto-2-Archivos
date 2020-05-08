@@ -11,7 +11,7 @@ import { Sesion } from 'src/app/models/sesion';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
-  usuario:Usuario;
+  usuario:any=[];
   log:Login;
   
   constructor(private router:Router, 
@@ -28,14 +28,18 @@ export class LoginComponent implements OnInit {
     login.correo = correo;
     login.contrasena = contrasena;
     console.log(login);
+    sessionStorage.setItem('current',JSON.stringify(this.userService.getUser(login.correo)));
+    console.log(JSON.parse(sessionStorage.getItem('current')))
     if(this.userService.autenticarUsuario(login)){
       console.log('cocos feo');
       this.usuario = this.userService.getUser(login.correo);
-      this.storageService.setCurrentSession(this.usuario);
-      if(this.usuario.rol==1){
-        this.router.navigate(['home-user']);
-      }else{
+      console.log(this.usuario);
+      //this.storageService.setCurrentSession(this.usuario);
+      //console.log(JSON.parse(sessionStorage.getItem('current')));
+      if( JSON.parse(sessionStorage.getItem('current'))['ID_ROL'] !== 1){
         this.router.navigate(['home-admin']);
+      }else{
+        this.router.navigate(['home-user']);
       }
     }else{
       this.router.navigate(['home']);

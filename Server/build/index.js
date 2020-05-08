@@ -30,7 +30,7 @@ class Server {
         this.app.use('/api', allRoutes_1.default);
     }
     start() {
-        this.app.listen(3000, '0.0.0.0', () => {
+        this.app.listen(3000, () => {
             console.log('Server on port ', this.app.get('port'));
         });
     }

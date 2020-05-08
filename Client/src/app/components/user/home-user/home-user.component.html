@@ -26,6 +26,19 @@
                 
         </div>
         </div>
-        
+        <div class = "col-md-4" *ngFor="let producto of products">
+            <div class="card text-center">
+              <div class="card-header bg-dark text-white d-flex justify-content-between align-items-center">
+                {{producto.nombre}}
+                <button class="btn">
+                  Ver Producto
+                </button>
+              </div>
+              <img class="card-img-top" [src]="producto.imagen">
+              <div class="card-body">
+                <p class="card-text">{{producto.descripcion}}</p>
+              </div>
+            </div>
+          </div>
     </div>
 </section>

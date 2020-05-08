@@ -13,7 +13,7 @@ export class UserasideComponent implements OnInit {
   constructor(private storageService:StorageService) {
     if(this.storageService.isAuthenticated()){
       this.usuario = this.storageService.getCurrentSession();
-      this.usuario.pathFoto = 'http://localhost:3000/uploads/'+this.usuario.pathFoto;
+      this.usuario.pathFoto = 'http://192.168.1.26:3000/uploads/'+this.usuario.pathFoto;
       console.log(this.usuario);
     }
     

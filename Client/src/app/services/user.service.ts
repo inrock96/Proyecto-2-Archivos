@@ -8,8 +8,9 @@ import { stringify } from 'querystring';
   providedIn: 'root'
 })
 export class UserService {
-  API_URI = 'http://localhost:3000/api';
+  API_URI = 'http://192.168.1.26:3000/api';
   usuarios:any=[];
+  filtrado:any=[];
   sesion = false;
   images;
   bandera:boolean;
@@ -56,11 +57,12 @@ export class UserService {
     console.log('la bandera del verificado de usuario es='+this.bandera)
     return this.bandera;
   }
-  getUser(pcorreo:String):Usuario{
+  getUser(pcorreo:String):any{
     let user = new Usuario;
     this.getOneUser(pcorreo).subscribe(
       res=>{
         this.usuarios=res;
+        this.filtrado=res;
         if(Array.isArray(this.usuarios)&&this.usuarios.length){
           user.id=this.usuarios[0]['ID_USUARIO']
           user.nombre= this.usuarios[0]['NOMBRE'];
@@ -78,7 +80,7 @@ export class UserService {
         }
       }
     )
-    return user;
+    return this.usuarios;
   }
   updateContrasena(pcorreo:String,pcontrasena:String){
     var login = new Login();

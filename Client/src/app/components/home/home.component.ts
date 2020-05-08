@@ -32,8 +32,8 @@ export class HomeComponent implements OnInit {
         this.pagina=res;
         this.nombre=this.pagina[0]['NOMBRE'];
         this.eslogan=this.pagina[0]['ESLOGAN'];
-        this.pathLogo='http://localhost:3000/uploads/'+this.pagina[0]['IMAGEN'];
-        this.pathVideo='http://localhost:3000/uploads/'+encodeURIComponent(this.pagina[0]['VIDEO'].trim());
+        this.pathLogo='http://192.168.1.26:3000/uploads/'+this.pagina[0]['IMAGEN'];
+        this.pathVideo='http://192.168.1.26:3000/uploads/'+encodeURIComponent(this.pagina[0]['VIDEO'].trim());
         console.log(this.pathVideo);
         this.vision=this.pagina[0]['VISION'];
         this.mision=this.pagina[0]['MISION'];

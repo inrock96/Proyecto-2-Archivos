@@ -13,6 +13,8 @@ import { ReportesComponent } from './components/admin/reportes/reportes.componen
 import { AccountRecoveryComponent } from './components/account-recovery/account-recovery.component';
 import { ProfileComponent } from './components/user/profile/profile.component';
 import { AccessdeniedComponent } from './components/accessdenied/accessdenied.component';
+import { ProductComponent } from './components/product/product.component';
+import { ModificarusuarioComponent } from './components/admin/modificarusuario/modificarusuario.component';
 
 const routes: Routes = [
   {
@@ -61,7 +63,7 @@ const routes: Routes = [
     component:AccountRecoveryComponent
   },
   {
-    path:'profile/:id',
+    path:'profile',
     component:ProfileComponent
   },
   {
@@ -71,6 +73,12 @@ const routes: Routes = [
   {
     path:'crud-user',
     component:CrudAdminComponent
+  },{
+    path:'producto/:id',
+    component:ProductComponent
+  },{
+    path:'modificarUsuario',
+    component:ModificarusuarioComponent
   }
 ];
 

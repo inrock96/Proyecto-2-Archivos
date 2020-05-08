@@ -6,7 +6,7 @@ import { Login } from '../models/login';
   providedIn: 'root'
 })
 export class MainpageService {
-  API_URI = 'http://localhost:3000'
+  API_URI = 'http://192.168.1.26:3000'
   constructor(private http: HttpClient) { }
   getMainPage(){
     return this.http.get(`${this.API_URI}/home`);

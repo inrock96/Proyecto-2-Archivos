@@ -322,11 +322,8 @@ class AllController{
             })
         });
     }
-    public async addCategoria(req:Request,res:Response){
-        var pnombre = req.body.nombre;
-        var pdescripcion = req.body.descripcion;
-        var ppadre = req.body.padre;
-        
+    public async getCategoria(req:Request,res:Response){
+        var pnombre= req.body.nombre;
         await oracledb.getConnection(connAttrs,function(err,connection){
             if(err){
                 res.set('Content-Type','application/JSON');
@@ -335,14 +332,11 @@ class AllController{
                 detailed_message:err.message})
                 return;
             }
-            connection.execute('INSERT INTO categoria (nombre,descripcion,id_categoria_padre) VALUES(:nombre,:descripcion,:id_categoria_padre)',{
-                nombre:pnombre,
-                descripcion:pdescripcion,
-                id_categoria_padre:ppadre,
-                
+            connection.execute('SELECT * FROM CATEGORIA WHERE nombre=:nombre',
+            {
+                nombre:pnombre
             },
             {
-                autoCommit:true,
                 outFormat:oracledb.OUT_FORMAT_OBJECT
             },
             function(err,result){
@@ -358,19 +352,151 @@ class AllController{
                     res.header('Access-Control-Allow-Headers','Content-Type');
                     res.header('Access-Control-Allow-Methods','GET,PUT,POST,DELETE,OPTIONS');
                     res.contentType('application/json').status(200);
-                    res.json("1");
+                    res.json(result.rows);
                 }
                 connection.release(function(err){
                     if(err){
                         console.error(err.message);
                         console.log('no se ejecutaron tus nalgas');
                     }else{
-                        console.log("POST /api/addCategoria : Connection released");
+                        console.log("GET /api/getCategoria : Connection released");
                     }
                 })
             })
         });
- 
+    }
+    public async getCategorias(req:Request,res:Response){
+        await oracledb.getConnection(connAttrs,function(err,connection){
+            if(err){
+                res.set('Content-Type','application/JSON');
+                res.status(500).json({status:500,
+                message:"Error connecting to db",
+                detailed_message:err.message})
+                return;
+            }
+            connection.execute('SELECT * FROM CATEGORIA',
+            {
+            },
+            {
+                outFormat:oracledb.OUT_FORMAT_OBJECT
+            },
+            function(err,result){
+                if(err){
+                    res.set('Content-Type','application/JSON');
+                    res.status(500).json({status:500,
+                    message:"Error using db",
+                    detailed_message:err.message})
+                    console.log(err.message);
+                    return;
+                }else{
+                    res.header('Access-Control-Allow-Origin','*');
+                    res.header('Access-Control-Allow-Headers','Content-Type');
+                    res.header('Access-Control-Allow-Methods','GET,PUT,POST,DELETE,OPTIONS');
+                    res.contentType('application/json').status(200);
+                    res.json(result.rows);
+                }
+                connection.release(function(err){
+                    if(err){
+                        console.error(err.message);
+                        console.log('no se ejecutaron tus nalgas');
+                    }else{
+                        console.log("GET /api/getCategoria : Connection released");
+                    }
+                })
+            })
+        });
+    }
+    public async addCategoria(req:Request,res:Response){
+        var pnombre = req.body.nombre;
+        var pdescripcion = req.body.descripcion;
+        var ppadre = req.body.padre;
+        if(req.body.padre!="null"){
+            await oracledb.getConnection(connAttrs,function(err,connection){
+                if(err){
+                    res.set('Content-Type','application/JSON');
+                    res.status(500).json({status:500,
+                    message:"Error connecting to db",
+                    detailed_message:err.message})
+                    return;
+                }
+                connection.execute('INSERT INTO categoria (nombre,descripcion,id_categoria_padre) VALUES(:nombre,:descripcion,:id_categoria_padre)',{
+                    nombre:pnombre,
+                    descripcion:pdescripcion,
+                    id_categoria_padre:ppadre,
+                    
+                },
+                {
+                    autoCommit:true,
+                    outFormat:oracledb.OUT_FORMAT_OBJECT
+                },
+                function(err,result){
+                    if(err){
+                        res.set('Content-Type','application/JSON');
+                        res.status(500).json({status:500,
+                        message:"Error using db",
+                        detailed_message:err.message})
+                        console.log(err.message);
+                        return;
+                    }else{
+                        res.header('Access-Control-Allow-Origin','*');
+                        res.header('Access-Control-Allow-Headers','Content-Type');
+                        res.header('Access-Control-Allow-Methods','GET,PUT,POST,DELETE,OPTIONS');
+                        res.contentType('application/json').status(200);
+                        res.json("1");
+                    }
+                    connection.release(function(err){
+                        if(err){
+                            console.error(err.message);
+                            console.log('no se ejecutaron tus nalgas');
+                        }else{
+                            console.log("POST /api/addCategoria : Connection released");
+                        }
+                    })
+                })
+            });
+        }else{
+            await oracledb.getConnection(connAttrs,function(err,connection){
+                if(err){
+                    res.set('Content-Type','application/JSON');
+                    res.status(500).json({status:500,
+                    message:"Error connecting to db",
+                    detailed_message:err.message})
+                    return;
+                }
+                connection.execute('INSERT INTO categoria (nombre,descripcion) VALUES(:nombre,:descripcion)',{
+                    nombre:pnombre,
+                    descripcion:pdescripcion,
+                },
+                {
+                    autoCommit:true,
+                    outFormat:oracledb.OUT_FORMAT_OBJECT
+                },
+                function(err,result){
+                    if(err){
+                        res.set('Content-Type','application/JSON');
+                        res.status(500).json({status:500,
+                        message:"Error using db",
+                        detailed_message:err.message})
+                        console.log(err.message);
+                        return;
+                    }else{
+                        res.header('Access-Control-Allow-Origin','*');
+                        res.header('Access-Control-Allow-Headers','Content-Type');
+                        res.header('Access-Control-Allow-Methods','GET,PUT,POST,DELETE,OPTIONS');
+                        res.contentType('application/json').status(200);
+                        res.json("1");
+                    }
+                    connection.release(function(err){
+                        if(err){
+                            console.error(err.message);
+                            console.log('no se ejecutaron tus nalgas');
+                        }else{
+                            console.log("POST /api/addCategoria : Connection released");
+                        }
+                    })
+                })
+            });
+        }
     }
     public sendMail(req:Request,res:Response){
         console.log(req.body);

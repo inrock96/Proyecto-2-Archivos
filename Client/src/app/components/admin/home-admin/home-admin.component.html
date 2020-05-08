@@ -1,23 +1,51 @@
 <app-header-admin></app-header-admin>
-<div class="container">
-    <div class="row">
-          <div class="col-sm-8">
-              <div class="row">
-                  <div class="col-sm-4">1</div>
-                  <div class="col-sm-4">2</div>
-                  <div class="col-sm-4">3</div>
-                  <div class="col-sm-4">4</div>
-                  <div class="col-sm-4">5</div>
-                  <div class="col-sm-4">6</div>
-              </div>
+<section id="speakers" class= "mt-4">
+  <div class="container">
+
+      <div class="row">
+        
+        <div class ="col-md-8 mb-6 col-md-8 col-lg-5">
+          <div class="col-md-6 mb-4 col-md-6 col-lg-5">
+            <div>
+              <input  type="text" class="form-control" placeholder="Búsqueda producto" #txtBusqueda>
+            </div>
+            <div>
+              <button class="btn btn-lg btn-dark btn-block" (click)="buscar(txtBusqueda.value)">Buscar</button>
+            </div>
           </div>
-        <div class="col-sm-4">
-          <div class="row">Nav</div>
-          <div class="row">Nav</div>
-          <div class="row">Nav</div>
-          <div class="row">Nav</div>
-          <div class="row">Nav</div>
+        </div>
+        <div class="row-md-6 mb-4 row-md-6 row-lg-5"></div>
+        <div class="col-md-6 mb-4 col-md-6 col-lg-5">
+            <div class="card">
+                <img [src]="this.pathFoto" class="card-img-top" alt="Foto">
+                    <div class="card-body">
+                        <h5 class="card-title">INFORMACION PERSONAL</h5>
+                    </div>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item">Nombre: {{this.nombre}}</li>
+                        <li class="list-group-item">Apellido: {{this.apellidos}}</li>
+                        <li class="list-group-item">Correo: {{this.correo}}</li>
+                        <li class="list-group-item">Telefono: {{this.telefono}}</li>
+                        <a class="btn btn-primary btn-block" (onClick)="irAProfile()">EDITAR INFORMACION</a>
+                      </ul>
+            </div>
+            
+      </div>
+      </div>
+      <div class = "col-md-4" *ngFor="let producto of products">
+        <div class="card text-center">
+          <div class="card-header bg-dark text-white d-flex justify-content-between align-items-center">
+            {{producto.nombre}}
+            <button class="btn">
+              Ver Producto
+            </button>
+          </div>
+          <img class="card-img-top" [src]="producto.imagen">
+          <div class="card-body">
+            <p class="card-text">{{producto.descripcion}}</p>
+          </div>
         </div>
       </div>
-</div>
-<footer></footer>
+      
+  </div>
+</section>
