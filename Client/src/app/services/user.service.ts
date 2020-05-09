@@ -37,21 +37,21 @@ export class UserService {
         if((Array.isArray(this.usuarios)&&this.usuarios.length)){
           if(this.usuarios.length>0){
             console.log('si es array >0');
-            this.bandera = true;
+            return true;
             
             }
           else {
             console.log('si es array pero no es mayor a 0');
-            this.bandera = false;
+            return  false;
           }
         }else{
           console.log('No es arreglo');
-          this.bandera =  false;
+          return  false;
         }
       },
       err=>{
         console.error(err);
-        this.bandera=false;
+        return false;
       }
     )
     console.log('la bandera del verificado de usuario es='+this.bandera)

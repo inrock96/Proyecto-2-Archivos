@@ -281,8 +281,52 @@ class AllController{
     }
     public async buscarProductos(req:Request,res:Response){
         var psearch = req.body.search;
+        var porden = req.body.orden;
+        var ptipo = req.body.tipo;
+
         psearch= "%"+psearch+"%";
-        await oracledb.getConnection(connAttrs,function(err,connection){
+        if(porden===1&&ptipo===1){
+            await oracledb.getConnection(connAttrs,function(err,connection){
+                if(err){
+                    res.set('Content-Type','application/JSON');
+                    res.status(500).json({status:500,
+                    message:"Error connecting to db",
+                    detailed_message:err.message})
+                    return;
+                }
+                connection.execute("SELECT * FROM PRODUCTO WHERE nombre LIKE :search ORDER BY fecha_carga ASC",{
+                    search:psearch
+                },
+                {
+                    outFormat:oracledb.OUT_FORMAT_OBJECT,
+                    autoCommit:true
+                },
+                function(err,result){
+                    if(err){
+                        res.set('Content-Type','application/JSON');
+                        res.status(500).json({status:500,
+                        message:"Error using db",
+                        detailed_message:err.message})
+                        return;
+                    }else{
+                        res.header('Access-Control-Allow-Origin','*');
+                        res.header('Access-Control-Allow-Headers','Content-Type');
+                        res.header('Access-Control-Allow-Methods','GET,PUT,POST,DELETE,OPTIONS');
+                        res.contentType('application/json').status(200);
+                        res.json(result.rows);
+                    }
+                    connection.release(function(err){
+                        if(err){
+                            console.error(err.message);
+                            console.log('No se pudo ejecutar buscqueda');
+                        }else{
+                            console.log("POST /buscarProductos : Connection released");
+                        }
+                    })
+                })
+            });
+        }else if(porden===1&&ptipo===2){
+            await oracledb.getConnection(connAttrs,function(err,connection){
             if(err){
                 res.set('Content-Type','application/JSON');
                 res.status(500).json({status:500,
@@ -290,7 +334,7 @@ class AllController{
                 detailed_message:err.message})
                 return;
             }
-            connection.execute("SELECT * FROM PRODUCTO WHERE nombre LIKE :search",{
+            connection.execute("SELECT * FROM PRODUCTO WHERE nombre LIKE :search ORDER BY precio ASC",{
                 search:psearch
             },
             {
@@ -321,10 +365,92 @@ class AllController{
                 })
             })
         });
+        }else if(porden===2&&ptipo===1){
+            await oracledb.getConnection(connAttrs,function(err,connection){
+                if(err){
+                    res.set('Content-Type','application/JSON');
+                    res.status(500).json({status:500,
+                    message:"Error connecting to db",
+                    detailed_message:err.message})
+                    return;
+                }
+                connection.execute("SELECT * FROM PRODUCTO WHERE nombre LIKE :search ORDER BY fecha_carga DESC",{
+                    search:psearch
+                },
+                {
+                    outFormat:oracledb.OUT_FORMAT_OBJECT,
+                    autoCommit:true
+                },
+                function(err,result){
+                    if(err){
+                        res.set('Content-Type','application/JSON');
+                        res.status(500).json({status:500,
+                        message:"Error using db",
+                        detailed_message:err.message})
+                        return;
+                    }else{
+                        res.header('Access-Control-Allow-Origin','*');
+                        res.header('Access-Control-Allow-Headers','Content-Type');
+                        res.header('Access-Control-Allow-Methods','GET,PUT,POST,DELETE,OPTIONS');
+                        res.contentType('application/json').status(200);
+                        res.json(result.rows);
+                    }
+                    connection.release(function(err){
+                        if(err){
+                            console.error(err.message);
+                            console.log('No se pudo ejecutar buscqueda');
+                        }else{
+                            console.log("POST /buscarProductos : Connection released");
+                        }
+                    })
+                })
+            });
+        }else{
+            await oracledb.getConnection(connAttrs,function(err,connection){
+                if(err){
+                    res.set('Content-Type','application/JSON');
+                    res.status(500).json({status:500,
+                    message:"Error connecting to db",
+                    detailed_message:err.message})
+                    return;
+                }
+                connection.execute("SELECT * FROM PRODUCTO WHERE nombre LIKE :search ORDER BY precio DESC",{
+                    search:psearch
+                },
+                {
+                    outFormat:oracledb.OUT_FORMAT_OBJECT,
+                    autoCommit:true
+                },
+                function(err,result){
+                    if(err){
+                        res.set('Content-Type','application/JSON');
+                        res.status(500).json({status:500,
+                        message:"Error using db",
+                        detailed_message:err.message})
+                        return;
+                    }else{
+                        res.header('Access-Control-Allow-Origin','*');
+                        res.header('Access-Control-Allow-Headers','Content-Type');
+                        res.header('Access-Control-Allow-Methods','GET,PUT,POST,DELETE,OPTIONS');
+                        res.contentType('application/json').status(200);
+                        res.json(result.rows);
+                    }
+                    connection.release(function(err){
+                        if(err){
+                            console.error(err.message);
+                            console.log('No se pudo ejecutar buscqueda');
+                        }else{
+                            console.log("POST /buscarProductos : Connection released");
+                        }
+                    })
+                })
+            });
+        }
+        
     }
-    public async getCategoria(req:Request,res:Response){
+    public getCategoria(req:Request,res:Response){
         var pnombre= req.body.nombre;
-        await oracledb.getConnection(connAttrs,function(err,connection){
+        oracledb.getConnection(connAttrs,function(err,connection){
             if(err){
                 res.set('Content-Type','application/JSON');
                 res.status(500).json({status:500,
@@ -374,7 +500,7 @@ class AllController{
                 detailed_message:err.message})
                 return;
             }
-            connection.execute('SELECT * FROM CATEGORIA',
+            connection.execute('SELECT c2.id_categoria, c1.nombre AS padre,c2.nombre FROM CATEGORIA c1 RIGHT JOIN CATEGORIA c2 on c1.ID_CATEGORIA=c2.ID_CATEGORIA_PADRE',
             {
             },
             {
@@ -497,6 +623,78 @@ class AllController{
                 })
             });
         }
+    }
+
+    public async getColores(req:Request,res:Response){
+        await oracledb.getConnection(connAttrs,function(err,connection){
+            if(err){
+                res.set('Content-Type','application/JSON');
+                res.status(500).json({status:500,
+                message:"Error connecting to db",
+                detailed_message:err.message})
+                return;
+            }
+            connection.execute('SELECT * FROM COLOR',
+            {
+            },
+            {
+                outFormat:oracledb.OUT_FORMAT_OBJECT
+            },
+            function(err,result){
+                if(err){
+                    res.set('Content-Type','application/JSON');
+                    res.status(500).json({status:500,
+                    message:"Error using db",
+                    detailed_message:err.message})
+                    console.log(err.message);
+                    return;
+                }else{
+                    res.header('Access-Control-Allow-Origin','*');
+                    res.header('Access-Control-Allow-Headers','Content-Type');
+                    res.header('Access-Control-Allow-Methods','GET,PUT,POST,DELETE,OPTIONS');
+                    res.contentType('application/json').status(200);
+                    res.json(result.rows);
+                }
+                connection.release(function(err){
+                    if(err){
+                        console.error(err.message);
+                        console.log('no se ejecutaron tus nalgas');
+                    }else{
+                        console.log("GET /api/getColores : Connection released");
+                    }
+                })
+            })
+        });
+    }
+    public reporte1(req:Request,res:Response){
+        
+    }
+    public reporte2(req:Request,res:Response){
+        
+    }
+    public reporte3(req:Request,res:Response){
+        
+    }
+    public reporte4(req:Request,res:Response){
+        
+    }
+    public reporte5(req:Request,res:Response){
+        
+    }
+    public reporte6(req:Request,res:Response){
+        
+    }
+    public reporte7(req:Request,res:Response){
+        
+    }
+    public reporte8(req:Request,res:Response){
+        
+    }
+    public reporte9(req:Request,res:Response){
+        
+    }
+    public reporte10(req:Request,res:Response){
+        
     }
     public sendMail(req:Request,res:Response){
         console.log(req.body);

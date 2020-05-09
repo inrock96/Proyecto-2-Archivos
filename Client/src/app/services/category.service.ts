@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Categoria } from '../models/categoria';
+import { resolve } from 'url';
 
 
 @Injectable({
@@ -19,12 +20,21 @@ export class CategoryService {
   }
   getCategoria(nombre:String){
     const data = {
-      busqueda:nombre
+      nombre:nombre
     }
-    return this.http.post(`${this.API_URI}/getCategoria`,data).subscribe(
-      res=>{
-        this.categoriaBusacada=res;
-      }
-    );
+    //return this.http.post(`${this.API_URI}/getCategoria`,data).subscribe(
+    //  res=>{
+    //    this.categoriaBusacada=res;
+    //  }
+    //);
+    return new Promise((resolve,reject)=>{
+      this.http.post(`${this.API_URI}/getCategoria`,data).subscribe(
+        res=>{
+          this.categoriaBusacada=res;
+          resolve();
+        }
+      )
+    });
+
   }
 }

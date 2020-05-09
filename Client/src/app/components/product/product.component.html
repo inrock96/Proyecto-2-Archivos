@@ -1,1 +1,15 @@
-<p>product works!</p>
+<app-header-user></app-header-user>
+<div class="container">
+    <div class="card text-center">
+        <div class="card-header bg-dark text-white d-flex justify-content-between align-items-center">
+            {{producto.nombre}}
+        </div>
+        <img class="card-img-top" [src]="producto.imagen">
+        <div class="card-body">
+        <p class="card-text">{{producto.fecha}}</p>
+        <p class="card-text">{{producto.precio}}</p>
+        <p class="card-text">{{producto.descripcion}}</p>
+        <p class="card-text">{{producto.cantidad}}</p>
+        </div>
+    </div>
+</div>

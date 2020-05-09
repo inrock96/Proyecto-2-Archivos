@@ -296,88 +296,213 @@ class AllController {
     buscarProductos(req, res) {
         return __awaiter(this, void 0, void 0, function* () {
             var psearch = req.body.search;
+            var porden = req.body.orden;
+            var ptipo = req.body.tipo;
             psearch = "%" + psearch + "%";
-            yield oracledb_1.default.getConnection(connAttrs, function (err, connection) {
-                if (err) {
-                    res.set('Content-Type', 'application/JSON');
-                    res.status(500).json({ status: 500,
-                        message: "Error connecting to db",
-                        detailed_message: err.message });
-                    return;
-                }
-                connection.execute("SELECT * FROM PRODUCTO WHERE nombre LIKE :search", {
-                    search: psearch
-                }, {
-                    outFormat: oracledb_1.default.OUT_FORMAT_OBJECT,
-                    autoCommit: true
-                }, function (err, result) {
+            if (porden === 1 && ptipo === 1) {
+                yield oracledb_1.default.getConnection(connAttrs, function (err, connection) {
                     if (err) {
                         res.set('Content-Type', 'application/JSON');
                         res.status(500).json({ status: 500,
-                            message: "Error using db",
+                            message: "Error connecting to db",
                             detailed_message: err.message });
                         return;
                     }
-                    else {
-                        res.header('Access-Control-Allow-Origin', '*');
-                        res.header('Access-Control-Allow-Headers', 'Content-Type');
-                        res.header('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE,OPTIONS');
-                        res.contentType('application/json').status(200);
-                        res.json(result.rows);
-                    }
-                    connection.release(function (err) {
+                    connection.execute("SELECT * FROM PRODUCTO WHERE nombre LIKE :search ORDER BY fecha_carga ASC", {
+                        search: psearch
+                    }, {
+                        outFormat: oracledb_1.default.OUT_FORMAT_OBJECT,
+                        autoCommit: true
+                    }, function (err, result) {
                         if (err) {
-                            console.error(err.message);
-                            console.log('No se pudo ejecutar buscqueda');
+                            res.set('Content-Type', 'application/JSON');
+                            res.status(500).json({ status: 500,
+                                message: "Error using db",
+                                detailed_message: err.message });
+                            return;
                         }
                         else {
-                            console.log("POST /buscarProductos : Connection released");
+                            res.header('Access-Control-Allow-Origin', '*');
+                            res.header('Access-Control-Allow-Headers', 'Content-Type');
+                            res.header('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE,OPTIONS');
+                            res.contentType('application/json').status(200);
+                            res.json(result.rows);
                         }
+                        connection.release(function (err) {
+                            if (err) {
+                                console.error(err.message);
+                                console.log('No se pudo ejecutar buscqueda');
+                            }
+                            else {
+                                console.log("POST /buscarProductos : Connection released");
+                            }
+                        });
                     });
                 });
-            });
+            }
+            else if (porden === 1 && ptipo === 2) {
+                yield oracledb_1.default.getConnection(connAttrs, function (err, connection) {
+                    if (err) {
+                        res.set('Content-Type', 'application/JSON');
+                        res.status(500).json({ status: 500,
+                            message: "Error connecting to db",
+                            detailed_message: err.message });
+                        return;
+                    }
+                    connection.execute("SELECT * FROM PRODUCTO WHERE nombre LIKE :search ORDER BY precio ASC", {
+                        search: psearch
+                    }, {
+                        outFormat: oracledb_1.default.OUT_FORMAT_OBJECT,
+                        autoCommit: true
+                    }, function (err, result) {
+                        if (err) {
+                            res.set('Content-Type', 'application/JSON');
+                            res.status(500).json({ status: 500,
+                                message: "Error using db",
+                                detailed_message: err.message });
+                            return;
+                        }
+                        else {
+                            res.header('Access-Control-Allow-Origin', '*');
+                            res.header('Access-Control-Allow-Headers', 'Content-Type');
+                            res.header('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE,OPTIONS');
+                            res.contentType('application/json').status(200);
+                            res.json(result.rows);
+                        }
+                        connection.release(function (err) {
+                            if (err) {
+                                console.error(err.message);
+                                console.log('No se pudo ejecutar buscqueda');
+                            }
+                            else {
+                                console.log("POST /buscarProductos : Connection released");
+                            }
+                        });
+                    });
+                });
+            }
+            else if (porden === 2 && ptipo === 1) {
+                yield oracledb_1.default.getConnection(connAttrs, function (err, connection) {
+                    if (err) {
+                        res.set('Content-Type', 'application/JSON');
+                        res.status(500).json({ status: 500,
+                            message: "Error connecting to db",
+                            detailed_message: err.message });
+                        return;
+                    }
+                    connection.execute("SELECT * FROM PRODUCTO WHERE nombre LIKE :search ORDER BY fecha_carga DESC", {
+                        search: psearch
+                    }, {
+                        outFormat: oracledb_1.default.OUT_FORMAT_OBJECT,
+                        autoCommit: true
+                    }, function (err, result) {
+                        if (err) {
+                            res.set('Content-Type', 'application/JSON');
+                            res.status(500).json({ status: 500,
+                                message: "Error using db",
+                                detailed_message: err.message });
+                            return;
+                        }
+                        else {
+                            res.header('Access-Control-Allow-Origin', '*');
+                            res.header('Access-Control-Allow-Headers', 'Content-Type');
+                            res.header('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE,OPTIONS');
+                            res.contentType('application/json').status(200);
+                            res.json(result.rows);
+                        }
+                        connection.release(function (err) {
+                            if (err) {
+                                console.error(err.message);
+                                console.log('No se pudo ejecutar buscqueda');
+                            }
+                            else {
+                                console.log("POST /buscarProductos : Connection released");
+                            }
+                        });
+                    });
+                });
+            }
+            else {
+                yield oracledb_1.default.getConnection(connAttrs, function (err, connection) {
+                    if (err) {
+                        res.set('Content-Type', 'application/JSON');
+                        res.status(500).json({ status: 500,
+                            message: "Error connecting to db",
+                            detailed_message: err.message });
+                        return;
+                    }
+                    connection.execute("SELECT * FROM PRODUCTO WHERE nombre LIKE :search ORDER BY precio DESC", {
+                        search: psearch
+                    }, {
+                        outFormat: oracledb_1.default.OUT_FORMAT_OBJECT,
+                        autoCommit: true
+                    }, function (err, result) {
+                        if (err) {
+                            res.set('Content-Type', 'application/JSON');
+                            res.status(500).json({ status: 500,
+                                message: "Error using db",
+                                detailed_message: err.message });
+                            return;
+                        }
+                        else {
+                            res.header('Access-Control-Allow-Origin', '*');
+                            res.header('Access-Control-Allow-Headers', 'Content-Type');
+                            res.header('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE,OPTIONS');
+                            res.contentType('application/json').status(200);
+                            res.json(result.rows);
+                        }
+                        connection.release(function (err) {
+                            if (err) {
+                                console.error(err.message);
+                                console.log('No se pudo ejecutar buscqueda');
+                            }
+                            else {
+                                console.log("POST /buscarProductos : Connection released");
+                            }
+                        });
+                    });
+                });
+            }
         });
     }
     getCategoria(req, res) {
-        return __awaiter(this, void 0, void 0, function* () {
-            var pnombre = req.body.nombre;
-            yield oracledb_1.default.getConnection(connAttrs, function (err, connection) {
+        var pnombre = req.body.nombre;
+        oracledb_1.default.getConnection(connAttrs, function (err, connection) {
+            if (err) {
+                res.set('Content-Type', 'application/JSON');
+                res.status(500).json({ status: 500,
+                    message: "Error connecting to db",
+                    detailed_message: err.message });
+                return;
+            }
+            connection.execute('SELECT * FROM CATEGORIA WHERE nombre=:nombre', {
+                nombre: pnombre
+            }, {
+                outFormat: oracledb_1.default.OUT_FORMAT_OBJECT
+            }, function (err, result) {
                 if (err) {
                     res.set('Content-Type', 'application/JSON');
                     res.status(500).json({ status: 500,
-                        message: "Error connecting to db",
+                        message: "Error using db",
                         detailed_message: err.message });
+                    console.log(err.message);
                     return;
                 }
-                connection.execute('SELECT * FROM CATEGORIA WHERE nombre=:nombre', {
-                    nombre: pnombre
-                }, {
-                    outFormat: oracledb_1.default.OUT_FORMAT_OBJECT
-                }, function (err, result) {
+                else {
+                    res.header('Access-Control-Allow-Origin', '*');
+                    res.header('Access-Control-Allow-Headers', 'Content-Type');
+                    res.header('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE,OPTIONS');
+                    res.contentType('application/json').status(200);
+                    res.json(result.rows);
+                }
+                connection.release(function (err) {
                     if (err) {
-                        res.set('Content-Type', 'application/JSON');
-                        res.status(500).json({ status: 500,
-                            message: "Error using db",
-                            detailed_message: err.message });
-                        console.log(err.message);
-                        return;
+                        console.error(err.message);
+                        console.log('no se ejecutaron tus nalgas');
                     }
                     else {
-                        res.header('Access-Control-Allow-Origin', '*');
-                        res.header('Access-Control-Allow-Headers', 'Content-Type');
-                        res.header('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE,OPTIONS');
-                        res.contentType('application/json').status(200);
-                        res.json(result.rows);
+                        console.log("GET /api/getCategoria : Connection released");
                     }
-                    connection.release(function (err) {
-                        if (err) {
-                            console.error(err.message);
-                            console.log('no se ejecutaron tus nalgas');
-                        }
-                        else {
-                            console.log("GET /api/getCategoria : Connection released");
-                        }
-                    });
                 });
             });
         });
@@ -392,7 +517,7 @@ class AllController {
                         detailed_message: err.message });
                     return;
                 }
-                connection.execute('SELECT * FROM CATEGORIA', {}, {
+                connection.execute('SELECT c2.id_categoria, c1.nombre AS padre,c2.nombre FROM CATEGORIA c1 RIGHT JOIN CATEGORIA c2 on c1.ID_CATEGORIA=c2.ID_CATEGORIA_PADRE', {}, {
                     outFormat: oracledb_1.default.OUT_FORMAT_OBJECT
                 }, function (err, result) {
                     if (err) {
@@ -516,6 +641,67 @@ class AllController {
                 });
             }
         });
+    }
+    getColores(req, res) {
+        return __awaiter(this, void 0, void 0, function* () {
+            yield oracledb_1.default.getConnection(connAttrs, function (err, connection) {
+                if (err) {
+                    res.set('Content-Type', 'application/JSON');
+                    res.status(500).json({ status: 500,
+                        message: "Error connecting to db",
+                        detailed_message: err.message });
+                    return;
+                }
+                connection.execute('SELECT * FROM COLOR', {}, {
+                    outFormat: oracledb_1.default.OUT_FORMAT_OBJECT
+                }, function (err, result) {
+                    if (err) {
+                        res.set('Content-Type', 'application/JSON');
+                        res.status(500).json({ status: 500,
+                            message: "Error using db",
+                            detailed_message: err.message });
+                        console.log(err.message);
+                        return;
+                    }
+                    else {
+                        res.header('Access-Control-Allow-Origin', '*');
+                        res.header('Access-Control-Allow-Headers', 'Content-Type');
+                        res.header('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE,OPTIONS');
+                        res.contentType('application/json').status(200);
+                        res.json(result.rows);
+                    }
+                    connection.release(function (err) {
+                        if (err) {
+                            console.error(err.message);
+                            console.log('no se ejecutaron tus nalgas');
+                        }
+                        else {
+                            console.log("GET /api/getColores : Connection released");
+                        }
+                    });
+                });
+            });
+        });
+    }
+    reporte1(req, res) {
+    }
+    reporte2(req, res) {
+    }
+    reporte3(req, res) {
+    }
+    reporte4(req, res) {
+    }
+    reporte5(req, res) {
+    }
+    reporte6(req, res) {
+    }
+    reporte7(req, res) {
+    }
+    reporte8(req, res) {
+    }
+    reporte9(req, res) {
+    }
+    reporte10(req, res) {
     }
     sendMail(req, res) {
         console.log(req.body);

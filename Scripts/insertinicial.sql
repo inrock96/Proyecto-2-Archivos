@@ -6,6 +6,15 @@ INSERT INTO Genero values(1,'Masculino');
 INSERT INTO Genero values(2,'Femenino');
 INSERT INTO Genero values(3,'Otro'); 
 
+INSERT INTO Color values(1,'azul');
+INSERT INTO Color values(2,'rojo');
+INSERT INTO Color values(3,'amarillo'); 
+INSERT INTO Color values(4,'verde');
+INSERT INTO Color values(5,'naranja');
+INSERT INTO Color values(6,'morado'); 
+INSERT INTO Color values(7,'blanco');
+INSERT INTO Color values(8,'negro');
+
 INSERT INTO usuario (
 nombre,
 apellidos,

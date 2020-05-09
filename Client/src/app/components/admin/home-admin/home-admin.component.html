@@ -1,17 +1,39 @@
 <app-header-admin></app-header-admin>
 <section id="speakers" class= "mt-4">
   <div class="container">
-
+    
       <div class="row">
         
         <div class ="col-md-8 mb-6 col-md-8 col-lg-5">
-          <div class="col-md-6 mb-4 col-md-6 col-lg-5">
-            <div>
-              <input  type="text" class="form-control" placeholder="Búsqueda producto" #txtBusqueda>
+          <div class="col">
+            <form>
+            <div class="form-row">
+              <div class="form-group col">
+                <input  type="text" class="form-control" placeholder="Búsqueda producto" #txtBusqueda>
+              </div>
             </div>
-            <div>
-              <button class="btn btn-lg btn-dark btn-block" (click)="buscar(txtBusqueda.value)">Buscar</button>
+            <div class="form-row">
+            <div class="form-group col">
+              <select class="custom-select" #textGenero id="order_select">
+                <option value="1">Ascendente</option>
+                <option value="2">Descendente</option>
+              </select>
             </div>
+              <div class="form-group col">
+                <select class="custom-select" #textGenero id="tipo_select">
+                  <option value="1">Fecha</option>
+                  <option value="2">Precio</option>
+                  <option value="3">Puntaje</option>
+              </select>
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-group col">
+                <button class="btn btn-lg btn-dark btn-block" (click)="buscar(txtBusqueda.value)">Buscar</button>
+              </div>
+            </div>
+            
+          </form>
           </div>
         </div>
         <div class="row-md-6 mb-4 row-md-6 row-lg-5"></div>
@@ -36,14 +58,12 @@
         <div class="card text-center">
           <div class="card-header bg-dark text-white d-flex justify-content-between align-items-center">
             {{producto.nombre}}
-            <button class="btn">
-              Ver Producto
-            </button>
           </div>
-          <img class="card-img-top" [src]="producto.imagen">
-          <div class="card-body">
-            <p class="card-text">{{producto.descripcion}}</p>
-          </div>
+            <div class="card-body">
+              <a [routerLink]="['/games/edit', game.id]" class="btn btn-info btn-block">
+                Ver producto
+              </a>
+            </div>
         </div>
       </div>
       

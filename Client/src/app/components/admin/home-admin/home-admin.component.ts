@@ -20,15 +20,13 @@ export class HomeAdminComponent implements OnInit {
   pathFoto:String;
   constructor(private storageService:StorageService,
               private router:Router) { 
-                console.log(JSON.parse(sessionStorage.getItem('current'))[0]['ID_ROL'])
-                if(JSON.parse(sessionStorage.getItem('current'))[0]['ID_ROL']===1){
-                  this.usuario = this.storageService.getCurrentSession();
+                if(JSON.parse(sessionStorage.getItem('current'))[0]['ID_ROL']!==1){
                   if(JSON.parse(sessionStorage.getItem('current'))[0]['ID_ROL']===2||JSON.parse(sessionStorage.getItem('current'))[0]['ID_ROL']===3){
                     this.router.navigate(['home-user']);
+                  }else{
+                    console.log('entro a admin')
+                    this.router.navigate(['accessdenied']);
                   }
-                }else{
-                  console.log('entro a admin')
-                  this.router.navigate(['accessdenied']);
                 }
             }
 

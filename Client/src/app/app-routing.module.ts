@@ -15,6 +15,7 @@ import { ProfileComponent } from './components/user/profile/profile.component';
 import { AccessdeniedComponent } from './components/accessdenied/accessdenied.component';
 import { ProductComponent } from './components/product/product.component';
 import { ModificarusuarioComponent } from './components/admin/modificarusuario/modificarusuario.component';
+import { CproductousuarioComponent } from './components/user/cproductousuario/cproductousuario.component';
 
 const routes: Routes = [
   {
@@ -79,6 +80,9 @@ const routes: Routes = [
   },{
     path:'modificarUsuario',
     component:ModificarusuarioComponent
+  },{
+    path:'crearProductoUsuario',
+    component:CproductousuarioComponent
   }
 ];
 

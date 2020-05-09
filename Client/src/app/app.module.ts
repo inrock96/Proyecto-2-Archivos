@@ -27,6 +27,7 @@ import { CrearusuarioComponent } from './components/admin/crearusuario/crearusua
 import { ModificarusuarioComponent } from './components/admin/modificarusuario/modificarusuario.component';
 import { UserasideComponent } from './components/useraside/useraside.component';
 import { ProductoComponent } from './components/user/producto/producto.component';
+import { CproductousuarioComponent } from './components/user/cproductousuario/cproductousuario.component';
 
 @NgModule({
   declarations: [
@@ -52,7 +53,8 @@ import { ProductoComponent } from './components/user/producto/producto.component
     CrearusuarioComponent,
     ModificarusuarioComponent,
     UserasideComponent,
-    ProductoComponent
+    ProductoComponent,
+    CproductousuarioComponent
   ],
   imports: [
     BrowserModule,
